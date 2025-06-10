@@ -1,103 +1,265 @@
 import Image from "next/image";
+import HeroVideo from "@/components/HeroVideo";
+import Link from "next/link";
+
+const GOLD = "#D6B24C";
+const GRAY = "#444444";
+const BG_LIGHT = "#FAF7F2"; // beige suave
+const BG_GRAY = "#F3F4F6"; // gris muy claro
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-white uppercase">
+      {/* Hero Section: solo el video */}
+      <section
+        className="relative w-full"
+        style={{ height: "60vh", minHeight: 320 }}
+      >
+        <HeroVideo videoId="LfMxM_IQPXc" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Divisor decorativo */}
+      <div className="w-full flex justify-center items-center my-0">
+        <div
+          style={{
+            height: 4,
+            width: 80,
+            background: GOLD,
+            borderRadius: 2,
+            marginTop: -20,
+            marginBottom: 40,
+          }}
+        />
+      </div>
+
+      {/* Título y subtítulo debajo del video */}
+      <section
+        className="w-full flex flex-col items-center justify-center text-center mb-16"
+        style={{
+          background: BG_LIGHT,
+          padding: "48px 0",
+          borderRadius: 24,
+          boxShadow: "0 2px 16px #0001",
+        }}
+      >
+        <h1
+          className="text-6xl mb-4 tracking-wider"
+          style={{ color: GOLD, letterSpacing: 2 }}
+        >
+          Pousada Santa Maria
+        </h1>
+        <p
+          className="text-xl tracking-wide"
+          style={{ color: GRAY, letterSpacing: 1 }}
+        >
+          Um refúgio de paz e tranquilidade
+        </p>
+      </section>
+
+      {/* A Pousada Section */}
+      <section
+        id="pousada"
+        className="py-20 px-4 md:px-8 max-w-7xl mx-auto"
+        style={{
+          color: "#222",
+          background: BG_GRAY,
+          borderRadius: 24,
+          marginBottom: 48,
+          boxShadow: "0 2px 16px #0001",
+        }}
+      >
+        <h2
+          className="text-4xl text-center mb-12 tracking-wide"
+          style={{ color: GOLD }}
+        >
+          A Pousada
+        </h2>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-lg leading-relaxed" style={{ color: GRAY }}>
+              Bem-vindo à Pousada Santa Maria, um oásis de tranquilidade onde a
+              natureza se encontra com o conforto. Nossa pousada oferece uma
+              experiência única de hospedagem, combinando o charme rústico com
+              modernidade.
+            </p>
+            <div className="mt-8">
+              <Link href="/pousada">
+                <button
+                  style={{ background: GOLD, color: "#222" }}
+                  className="px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition"
+                >
+                  Ver mais sobre a pousada
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="relative h-[400px]">
+            {/* Placeholder para imagen */}
+            <div className="absolute inset-0 bg-gray-200" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Quartos Section */}
+      <section
+        className="py-20 px-4 md:px-8"
+        style={{
+          color: "#222",
+          background: BG_LIGHT,
+          borderRadius: 24,
+          marginBottom: 48,
+          boxShadow: "0 2px 16px #0001",
+        }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="text-4xl text-center mb-12 tracking-wide"
+            style={{ color: GOLD }}
+          >
+            Quartos
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Quarto 1 */}
+            <div
+              className="bg-white rounded-lg overflow-hidden shadow-lg border"
+              style={{ borderColor: GOLD + "33" }}
+            >
+              <div className="relative h-64">
+                {/* Placeholder para imagen */}
+                <div className="absolute inset-0 bg-gray-200" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl mb-2" style={{ color: GOLD }}>
+                  Quarto Deluxe
+                </h3>
+                <p style={{ color: GRAY }}>
+                  Conforto e elegância em um ambiente acolhedor.
+                </p>
+              </div>
+            </div>
+            {/* Quarto 2 */}
+            <div
+              className="bg-white rounded-lg overflow-hidden shadow-lg border"
+              style={{ borderColor: GOLD + "33" }}
+            >
+              <div className="relative h-64">
+                {/* Placeholder para imagen */}
+                <div className="absolute inset-0 bg-gray-200" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl mb-2" style={{ color: GOLD }}>
+                  Suíte Premium
+                </h3>
+                <p style={{ color: GRAY }}>
+                  Luxo e espaço para momentos especiais.
+                </p>
+              </div>
+            </div>
+            {/* Quarto 3 */}
+            <div
+              className="bg-white rounded-lg overflow-hidden shadow-lg border"
+              style={{ borderColor: GOLD + "33" }}
+            >
+              <div className="relative h-64">
+                {/* Placeholder para imagen */}
+                <div className="absolute inset-0 bg-gray-200" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl mb-2" style={{ color: GOLD }}>
+                  Quarto Standard
+                </h3>
+                <p style={{ color: GRAY }}>
+                  Conforto e praticidade para sua estadia.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center mt-10">
+            <Link href="/quartos">
+              <button
+                style={{ background: GOLD, color: "#222" }}
+                className="px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition"
+              >
+                Ver todos os quartos
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Experiências Section */}
+      <section
+        className="py-20 px-4 md:px-8"
+        style={{
+          color: "#222",
+          background: BG_GRAY,
+          borderRadius: 24,
+          marginBottom: 48,
+          boxShadow: "0 2px 16px #0001",
+        }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="text-4xl text-center mb-12 tracking-wide"
+            style={{ color: GOLD }}
+          >
+            Experiências
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl mb-2" style={{ color: GOLD }}>
+                    Gastronomia Local
+                  </h3>
+                  <p style={{ color: GRAY }}>
+                    Descubra os sabores autênticos da região em nosso
+                    restaurante.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl mb-2" style={{ color: GOLD }}>
+                    Passeios Guiados
+                  </h3>
+                  <p style={{ color: GRAY }}>
+                    Explore as belezas naturais com nossos guias especializados.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl mb-2" style={{ color: GOLD }}>
+                    Spa & Bem-estar
+                  </h3>
+                  <p style={{ color: GRAY }}>
+                    Momentos de relaxamento e rejuvenescimento.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <Link href="/experiencias">
+                  <button
+                    style={{ background: GOLD, color: "#222" }}
+                    className="px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition"
+                  >
+                    Ver todas as experiências
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-[500px]">
+              {/* Placeholder para imagen */}
+              <div className="absolute inset-0 bg-gray-200" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
