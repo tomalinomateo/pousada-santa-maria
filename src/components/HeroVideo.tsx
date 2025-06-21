@@ -1,10 +1,8 @@
 "use client";
 
-interface HeroVideoProps {
-  videoId?: string;
-}
+interface HeroVideoProps {}
 
-export default function HeroVideo({ videoId }: HeroVideoProps) {
+export default function HeroVideo({}: HeroVideoProps) {
   return (
     <div className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] h-full mx-4 md:mx-8 overflow-hidden">
       <iframe
