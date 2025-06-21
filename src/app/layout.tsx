@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
-import { Baloo_Tamma_2 } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import StyleSwitcher from "@/components/StyleSwitcher";
 import FontSwitcher from "@/components/FontSwitcher";
 
-const balooTamma = Baloo_Tamma_2({
-  subsets: ["latin"],
-  variable: "--font-baloo-tamma",
-});
+const josefin = Josefin_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pousada Santa Maria",
-  description: "Um refúgio de paz e tranquilidade",
+  description: "Pousada Santa Maria em Atins, Lençóis Maranhenses",
+  icons: {
+    icon: "/images/logo-1.jpeg",
+  },
 };
 
 export default function RootLayout({
@@ -20,11 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt">
-      <body className={`${balooTamma.variable} font-sans`}>
+    <html lang="en">
+      <body className={josefin.className}>
         <Navbar />
-        <div className="pt-16">{children}</div>
+        <div className="pt-16 min-h-[80vh]">{children}</div>
+        <Footer />
         <FontSwitcher />
+        <StyleSwitcher />
       </body>
     </html>
   );
