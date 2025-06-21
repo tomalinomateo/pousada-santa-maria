@@ -60,8 +60,8 @@ export default function PousadaSection() {
           <Image
             src="/images/pousada/deck_1.jpg"
             alt="Deck da Pousada Santa Maria"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
           />
         </div>
       </div>

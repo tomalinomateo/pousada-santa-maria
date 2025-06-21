@@ -69,8 +69,8 @@ export default function QuartosSection() {
                 <Image
                   src={quarto.imagem}
                   alt={`Foto do quarto ${quarto.nome}`}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="p-4 md:p-6 flex-1 flex flex-col justify-between">

@@ -43,9 +43,8 @@ const ExperienceCard = ({
     <Image
       src={imagem}
       alt={nome}
-      layout="fill"
-      objectFit="cover"
-      className="transition-transform duration-500 group-hover:scale-110"
+      fill
+      className="object-cover transition-transform duration-500 group-hover:scale-110"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
     <div className="absolute bottom-0 left-0 p-4 md:p-6">
@@ -78,12 +77,9 @@ export default function ExperienciasSection() {
         </h2>
         <div className="text-center mt-8 md:mt-12 max-w-3xl mx-auto mb-8">
           <p className="text-lg" style={{ color: "var(--text, #444)" }}>
-            Os Lençóis Maranhenses são um tesouro natural único no mundo, e na
-            Pousada Santa Maria, oferecemos a você a chance de explorar cada
-            canto desta maravilha. Desde a emocionante Revoada dos Guarás até
-            tranquilas cavalgadas pelas dunas, aulas de kitesurf nas lagoas e
-            adrenalina nos passeios de quadriciclo, temos uma aventura para cada
-            espírito.
+            Descubra os Lençóis Maranhenses com a Pousada Santa Maria:
+            cavalgadas nas dunas, kitesurf nas lagoas e aventuras de
+            quadriciclo. Uma experiência única em cada detalhe.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
