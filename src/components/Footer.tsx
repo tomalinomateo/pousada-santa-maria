@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -97,10 +98,12 @@ export default function Footer() {
         {/* Logo */}
         <div className="flex-1 min-w-[220px] flex flex-col items-center justify-center">
           {/* Cambia logo.svg por el nombre real de tu archivo de logo */}
-          <img
-            src="/logo.svg"
+          <Image
+            src="/images/logo-1.jpeg"
             alt="Logo Pousada Santa Maria"
-            className="w-24 md:w-32 h-auto mb-2 opacity-80"
+            width={128}
+            height={128}
+            className="w-24 md:w-32 h-auto mb-2 opacity-80 rounded-full"
             style={{ filter: "grayscale(1)" }}
           />
           <span

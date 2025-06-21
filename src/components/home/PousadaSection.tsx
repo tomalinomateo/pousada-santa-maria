@@ -20,9 +20,11 @@ export default function PousadaSection() {
       }}
     >
       <div className="flex justify-center mb-6">
-        <img
+        <Image
           src="/images/logo-1.jpeg"
           alt="Logo Santa Maria"
+          width={112}
+          height={112}
           className="w-20 md:w-28 h-auto rounded-full object-contain shadow"
         />
       </div>

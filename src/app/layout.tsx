@@ -3,10 +3,13 @@ import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import StyleSwitcher from "@/components/StyleSwitcher";
 import FontSwitcher from "@/components/FontSwitcher";
+import StyleSwitcher from "@/components/StyleSwitcher";
 
-const josefin = Josefin_Sans({ subsets: ["latin"] });
+const josefin = Josefin_Sans({
+  subsets: ["latin"],
+  variable: "--font-josefin-sans",
+});
 
 export const metadata: Metadata = {
   title: "Pousada Santa Maria",
@@ -22,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={josefin.className}>
+    <html lang="en" data-theme="coco">
+      <body className={`${josefin.variable} font-sans`}>
         <Navbar />
         <div className="pt-16 min-h-[80vh]">{children}</div>
         <Footer />

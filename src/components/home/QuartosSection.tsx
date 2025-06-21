@@ -12,7 +12,7 @@ import {
 import { quartos } from "@/data/quartos";
 
 const GOLD = "var(--accent, #D6B24C)";
-const GRAY = "var(--text, #444444)";
+
 const BG_GRAY = "var(--section-bg, #F3F4F6)";
 
 export default function QuartosSection() {

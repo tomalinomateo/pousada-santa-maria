@@ -12,15 +12,15 @@ const MainExperience = {
 const subExperiences = [
   {
     nome: "Aulas de Kitesurf",
-    imagem: "/images/experiencias/kitesurf.JPG",
+    imagem: "/images/experiencias/kitesurf.jpg",
   },
   {
     nome: "Cavalgadas",
-    imagem: "/images/experiencias/cavalgadas.JPG",
+    imagem: "/images/experiencias/cavalgadas.jpg",
   },
   {
     nome: "Revoada dos Guarás",
-    imagem: "/images/experiencias/revoada_guaras.JPG",
+    imagem: "/images/experiencias/revoada_guaras.jpg",
   },
   {
     nome: "Passeios de Quadriciclo",

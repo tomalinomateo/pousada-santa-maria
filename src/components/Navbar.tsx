@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,12 @@ export default function Navbar() {
           className="flex items-center gap-2 text-xl font-bold tracking-widest"
           style={{ color: "var(--accent, #4C583E)" }}
         >
-          <img
+          <Image
             src="/images/logo-1.jpeg"
-            alt="Logo Santa Maria"
-            className="w-15 h-15 object-contain rounded-full"
+            alt="Logo Pousada Santa Maria"
+            width={48}
+            height={48}
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
           />
           <div className="flex flex-col">
             <span>Santa Maria</span>
