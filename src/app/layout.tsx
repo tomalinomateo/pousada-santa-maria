@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FontSwitcher from "@/components/FontSwitcher";
 import StyleSwitcher from "@/components/StyleSwitcher";
+import { stigma, laisha, localFonts } from "@/lib/fonts";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -24,9 +25,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Obtener todas las variables CSS de las fuentes locales
+  const localFontVariables = Object.values(localFonts)
+    .map((font: any) => font.variable)
+    .join(" ");
+
   return (
     <html lang="en" data-theme="coco">
-      <body className={`${josefin.variable} font-sans`}>
+      <body className={`${josefin.variable} ${localFontVariables} font-sans`}>
         <Navbar />
         <div className="pt-16 min-h-[80vh]">{children}</div>
         <Footer />

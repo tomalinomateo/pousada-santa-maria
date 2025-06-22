@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-josefin-sans)", "sans-serif"],
+        sans: ["var(--font-stigma)", "sans-serif"],
+        stigma: ["var(--font-stigma)", "sans-serif"],
+        laisha: ["var(--font-laisha)", "sans-serif"],
+        josefin: ["var(--font-josefin-sans)", "sans-serif"],
       },
       colors: {
         brand: {
