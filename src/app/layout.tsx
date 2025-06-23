@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FontSwitcher from "@/components/FontSwitcher";
 import StyleSwitcher from "@/components/StyleSwitcher";
-import { stigma, laisha, localFonts } from "@/lib/fonts";
+import { localFonts } from "@/lib/fonts";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   // Obtener todas las variables CSS de las fuentes locales
   const localFontVariables = Object.values(localFonts)
-    .map((font: any) => font.variable)
+    .map((font: { variable: string }) => font.variable)
     .join(" ");
 
   return (
