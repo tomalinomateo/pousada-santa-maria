@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en" data-theme="coco">
       <body className={`${josefin.variable} ${localFontVariables} font-sans`}>
         <Navbar />
-        <div className="pt-16 min-h-[80vh]">{children}</div>
+        <div className="min-h-[80vh]">{children}</div>
         <Footer />
         <FontSwitcher />
         <StyleSwitcher />
