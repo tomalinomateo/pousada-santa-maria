@@ -7,13 +7,10 @@ Coloca tus fuentes en `public/fonts/` con esta estructura:
 ```
 public/fonts/
 ├── stigma/
-│   ├── Stigma.ttf
 │   └── Stigma.otf
 ├── laisha/
-│   ├── Laisha.ttf
 │   └── Laisha.otf
 └── nueva-fuente/
-    ├── NuevaFuente.ttf
     └── NuevaFuente.otf
 ```
 
@@ -23,7 +20,7 @@ public/fonts/
 
 ```bash
 mkdir public/fonts/nueva-fuente
-# Copia tus archivos .ttf y .otf a esta carpeta
+# Copia tu archivo .otf a esta carpeta
 ```
 
 ### 2. Editar `src/lib/fonts.ts`
@@ -33,11 +30,6 @@ Agrega la configuración de la nueva fuente:
 ```typescript
 export const nuevaFuente = localFont({
   src: [
-    {
-      path: "../../public/fonts/nueva-fuente/NuevaFuente.ttf",
-      weight: "400",
-      style: "normal",
-    },
     {
       path: "../../public/fonts/nueva-fuente/NuevaFuente.otf",
       weight: "400",
@@ -88,22 +80,18 @@ npm run dev
 - **Nombres de variables**: Se generan automáticamente como `--font-nueva-fuente`
 - **Clases CSS**: Se generan automáticamente como `font-nueva-fuente`
 - **Orden**: Las fuentes locales aparecen primero en el selector, luego las de Google
+- **Formato**: Solo usamos archivos `.otf` (no `.ttf`)
 
 ## 🔄 Ejemplo Completo
 
 Si agregas una fuente llamada "Playfair":
 
 1. **Carpeta**: `public/fonts/playfair/`
-2. **Archivos**: `Playfair.ttf`, `Playfair.otf`
+2. **Archivo**: `Playfair.otf`
 3. **Configuración**:
    ```typescript
    export const playfair = localFont({
      src: [
-       {
-         path: "../../public/fonts/playfair/Playfair.ttf",
-         weight: "400",
-         style: "normal",
-       },
        {
          path: "../../public/fonts/playfair/Playfair.otf",
          weight: "400",

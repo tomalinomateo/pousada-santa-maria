@@ -33,6 +33,11 @@ body {
   color: var(--foreground);
 }
 
+/* Aumentar tamaño de fuente para Stigma */
+.font-stigma {
+  font-size: 1.15em; /* 15% más grande */
+}
+
 /* For hiding scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
