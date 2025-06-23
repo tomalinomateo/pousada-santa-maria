@@ -108,7 +108,10 @@ export default function ExperienciasSection() {
               }}
               className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all uppercase flex items-center justify-center gap-2 text-lg"
             >
-              Ver todas as experiências{" "}
+              <span className="md:hidden">Experiências</span>
+              <span className="hidden md:inline">
+                Ver todas as experiências
+              </span>
               <FaArrowRight className="ml-1 text-base" />
             </button>
           </Link>

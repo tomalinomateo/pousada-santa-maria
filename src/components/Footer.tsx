@@ -87,9 +87,11 @@ export default function Footer() {
               <FaWhatsapp />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/santamaria_atins/"
               aria-label="Instagram"
               style={{ color: "var(--accent, #4C583E)" }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaInstagram />
             </a>

@@ -109,7 +109,9 @@ export default function QuartosSection() {
               }}
               className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all uppercase flex items-center justify-center gap-2 text-lg"
             >
-              Ver todos os quartos <FaArrowRight className="ml-1 text-base" />
+              <span className="md:hidden">Nossos quartos</span>
+              <span className="hidden md:inline">Ver todos os quartos</span>
+              <FaArrowRight className="ml-1 text-base" />
             </button>
           </Link>
         </div>

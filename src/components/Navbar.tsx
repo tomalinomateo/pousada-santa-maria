@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Botón hamburguesa para mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-2xl"
+          className="md:hidden text-2xl z-50"
           style={{ color: "var(--accent, #4C583E)" }}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -49,11 +49,11 @@ export default function Navbar() {
         <div
           className={`${
             isOpen ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none p-4 md:p-0 gap-4 md:gap-6 text-base font-semibold items-center justify-center md:justify-start`}
+          } md:flex flex-col md:flex-row fixed md:relative inset-0 md:inset-auto top-0 left-0 w-full h-screen md:h-auto md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none p-4 md:p-0 gap-8 md:gap-6 text-xl md:text-base font-semibold items-center justify-start md:justify-start z-40 pt-20 md:pt-0`}
         >
           <Link
             href="/pousada"
-            className="hover:opacity-80 transition py-2 md:py-0"
+            className="hover:opacity-80 transition py-4 md:py-0 w-full text-center md:w-auto"
             style={{ color: "var(--accent, #4C583E)" }}
             onClick={() => setIsOpen(false)}
           >
@@ -61,7 +61,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/quartos"
-            className="hover:opacity-80 transition py-2 md:py-0"
+            className="hover:opacity-80 transition py-4 md:py-0 w-full text-center md:w-auto"
             style={{ color: "var(--accent, #4C583E)" }}
             onClick={() => setIsOpen(false)}
           >
@@ -69,7 +69,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/experiencias"
-            className="hover:opacity-80 transition py-2 md:py-0"
+            className="hover:opacity-80 transition py-4 md:py-0 w-full text-center md:w-auto"
             style={{ color: "var(--accent, #4C583E)" }}
             onClick={() => setIsOpen(false)}
           >
@@ -77,7 +77,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/contato"
-            className="hover:opacity-80 transition py-2 md:py-0"
+            className="hover:opacity-80 transition py-4 md:py-0 w-full text-center md:w-auto"
             style={{ color: "var(--accent, #4C583E)" }}
             onClick={() => setIsOpen(false)}
           >
@@ -85,11 +85,35 @@ export default function Navbar() {
           </Link>
           <Link
             href="/reservar"
-            className="bg-[var(--accent,#D6B24C)] text-white px-8 py-2 md:py-3 hover:scale-105 hover:shadow-lg transition-all font-bold flex items-center"
+            className="bg-[var(--accent,#D6B24C)] text-white px-12 py-4 md:px-8 md:py-3 hover:scale-105 hover:shadow-lg transition-all font-bold flex items-center justify-center w-full md:w-auto"
             onClick={() => setIsOpen(false)}
           >
             Reservar
           </Link>
+
+          {/* Redes sociales - solo visible en móvil */}
+          <div className="flex gap-6 md:hidden mt-8">
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              className="text-4xl hover:scale-110 transition-transform"
+              style={{ color: "var(--accent, #4C583E)" }}
+              onClick={() => setIsOpen(false)}
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://www.instagram.com/santamaria_atins/"
+              aria-label="Instagram"
+              className="text-4xl hover:scale-110 transition-transform"
+              style={{ color: "var(--accent, #4C583E)" }}
+              onClick={() => setIsOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+          </div>
         </div>
       </div>
     </nav>
