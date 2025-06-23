@@ -3,6 +3,7 @@
 import PousadaSection from "@/components/home/PousadaSection";
 import QuartosSection from "@/components/home/QuartosSection";
 import ExperienciasSection from "@/components/home/ExperienciasSection";
+import ReservarSection from "@/components/home/ReservarSection";
 import HeroVideo from "@/components/HeroVideo";
 
 const BG_LIGHT = "var(--main-bg, #FAF7F2)"; // beige suave
@@ -20,6 +21,7 @@ export default function Home() {
 
       <PousadaSection />
       <QuartosSection />
+      <ReservarSection />
       <ExperienciasSection />
     </main>
   );

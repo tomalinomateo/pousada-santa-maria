@@ -61,8 +61,8 @@ export default function PousadaSection() {
         </div>
         <div className="relative h-[250px] md:h-[400px] overflow-hidden shadow-lg border border-[rgba(0,0,0,0.04)] order-1 md:order-2">
           <Image
-            src="/images/pousada/deck_1.jpg"
-            alt="Deck da Pousada Santa Maria"
+            src="/images/pousada/interior_1.jpg"
+            alt="Interior da Pousada Santa Maria"
             fill
             className="object-cover"
           />
