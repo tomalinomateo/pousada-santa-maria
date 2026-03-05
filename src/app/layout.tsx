@@ -3,8 +3,6 @@ import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FontSwitcher from "@/components/FontSwitcher";
-import StyleSwitcher from "@/components/StyleSwitcher";
 import { localFonts } from "@/lib/fonts";
 
 const josefin = Josefin_Sans({
@@ -36,8 +34,6 @@ export default function RootLayout({
         <Navbar />
         <div className="min-h-[80vh]">{children}</div>
         <Footer />
-        <FontSwitcher />
-        <StyleSwitcher />
       </body>
     </html>
   );
