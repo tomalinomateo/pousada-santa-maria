@@ -22,7 +22,7 @@ export default function PousadaPage() {
       <PageHero
         surtitle="Pousada Santa Maria"
         title="A Pousada"
-        subtitle="Pequena e tranquila em Atins: quartos confortáveis, áreas externas com verde, redes e a areia sempre por perto."
+        subtitle="Pequena e tranquila em Atins, com quartos confortáveis, áreas externas acolhedoras e a natureza sempre por perto."
       />
 
       {/* Description */}
@@ -31,7 +31,7 @@ export default function PousadaPage() {
           className="text-base md:text-lg leading-relaxed"
           style={{ color: "var(--text)" }}
         >
-          A Santa Maria foi pensada para quem quer viver Atins com calma e conforto. Quartos agradáveis, banho gostoso, luz natural e uma atmosfera tranquila criam o cenário ideal para descansar. Pela manhã, o café da manhã bem servido completa a experiência. O resto vem de Atins: o mar, o céu, o vento e os Lençóis logo ali.
+          A Santa Maria foi pensada para quem quer viver Atins com calma e conforto. Quartos acolhedores, banho gostoso, luz natural e uma atmosfera tranquila convidam ao descanso. Pela manhã, o café da manhã bem servido completa a experiência.
         </p>
         <ReservarButton className="mt-8 bg-[#D6B24C] text-[#1C140D] hover:bg-[#e0c065]">
           Reservar agora

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -19,7 +19,7 @@ function useScrollArrows(containerRef: React.RefObject<HTMLDivElement | null>) {
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
 
-  const updateArrows = () => {
+  const updateArrows = useCallback(() => {
     const el = containerRef.current;
     if (!el) return;
     const hasOverflow = el.scrollWidth > el.clientWidth;
@@ -32,7 +32,7 @@ function useScrollArrows(containerRef: React.RefObject<HTMLDivElement | null>) {
     const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 1;
     setShowLeft(hasOverflow && !atStart);
     setShowRight(hasOverflow && !atEnd);
-  };
+  }, [containerRef]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -45,7 +45,7 @@ function useScrollArrows(containerRef: React.RefObject<HTMLDivElement | null>) {
       ro.disconnect();
       el.removeEventListener("scroll", updateArrows);
     };
-  }, []);
+  }, [containerRef, updateArrows]);
 
   return { showLeft, showRight };
 }
