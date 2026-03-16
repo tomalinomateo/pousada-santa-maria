@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
-import ReservarButton from "@/components/ReservarButton";
+import ReservarButton from "./ReservarButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

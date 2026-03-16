@@ -11,11 +11,6 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-stigma)", "sans-serif"],
         stigma: ["var(--font-stigma)", "sans-serif"],
-        laisha: ["var(--font-laisha)", "sans-serif"],
-        hashira: ["var(--font-hashira)", "sans-serif"],
-        cufatte: ["var(--font-cufatte)", "sans-serif"],
-        lalemonti: ["var(--font-lalemonti)", "sans-serif"],
-        gerbil: ["var(--font-gerbil)", "sans-serif"],
         josefin: ["var(--font-josefin-sans)", "sans-serif"],
       },
       fontSize: {
