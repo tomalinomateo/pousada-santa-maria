@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { FaCalendarAlt, FaMapMarkerAlt, FaStar, FaHeart } from "react-icons/fa";
 import Image from "next/image";
+import { FaCalendarAlt, FaMapMarkerAlt, FaStar, FaHeart } from "react-icons/fa";
+import ReservarButton from "@/components/ReservarButton";
 
 const GOLD = "var(--accent, #D6B24C)";
 const BG_GRAY = "var(--section-bg, #F3F4F6)";
@@ -8,10 +8,11 @@ const BG_GRAY = "var(--section-bg, #F3F4F6)";
 export default function ReservarSection() {
   return (
     <section
-      className="py-16 md:py-24 relative overflow-hidden"
+      className="py-10 md:py-16 relative overflow-hidden"
       style={{
         background: `linear-gradient(135deg, ${BG_GRAY} 0%, rgba(214, 178, 76, 0.1) 100%)`,
         color: "var(--text, #222)",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
       {/* Fondo decorativo */}
@@ -38,7 +39,7 @@ export default function ReservarSection() {
           {/* Lado izquierdo - Información */}
           <div className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaCalendarAlt className="text-2xl" style={{ color: GOLD }} />
                   <h3 className="font-bold text-lg">Reserva Fácil</h3>
@@ -48,7 +49,7 @@ export default function ReservarSection() {
                 </p>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaMapMarkerAlt
                     className="text-2xl"
@@ -64,7 +65,7 @@ export default function ReservarSection() {
                 </p>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaStar className="text-2xl" style={{ color: GOLD }} />
                   <h3 className="font-bold text-lg">Experiência Única</h3>
@@ -75,7 +76,7 @@ export default function ReservarSection() {
                 </p>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaHeart className="text-2xl" style={{ color: GOLD }} />
                   <h3 className="font-bold text-lg">Atenção Personalizada</h3>
@@ -87,7 +88,7 @@ export default function ReservarSection() {
               </div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-xl border border-white/30">
+            <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-default shadow-xl border border-white/30">
               <h3
                 className="text-xl md:text-2xl font-bold mb-4"
                 style={{ color: GOLD }}
@@ -140,10 +141,10 @@ export default function ReservarSection() {
           {/* Lado derecho - Imagen y CTA */}
           <div className="space-y-8">
             <div className="relative">
-              <div className="relative h-80 md:h-96 overflow-hidden rounded-lg shadow-2xl">
+              <div className="relative h-80 md:h-96 overflow-hidden rounded-default shadow-2xl">
                 <Image
-                  src="/images/pousada/deck_1.jpg"
-                  alt="Pousada Santa Maria - Vista do deck"
+                  src="/images/pousada/pousada_2.jpg"
+                  alt="Pousada Santa Maria - Vista da pousada"
                   fill
                   className="object-cover"
                 />
@@ -152,7 +153,7 @@ export default function ReservarSection() {
             </div>
 
             <div className="text-center space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg">
                 <h3 className="text-xl font-bold mb-2" style={{ color: GOLD }}>
                   Reserve Agora
                 </h3>
@@ -160,17 +161,9 @@ export default function ReservarSection() {
                   Garanta sua estadia e prepare-se para uma experiência
                   inesquecível
                 </p>
-                <Link href="/reservar">
-                  <button
-                    style={{
-                      background: GOLD,
-                      color: "var(--button-text, #222)",
-                    }}
-                    className="w-full px-8 py-4 font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all uppercase text-lg"
-                  >
-                    Fazer Reserva
-                  </button>
-                </Link>
+                <ReservarButton className="w-full px-8 py-4 text-lg">
+                  Fazer Reserva
+                </ReservarButton>
               </div>
             </div>
           </div>

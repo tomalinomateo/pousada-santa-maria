@@ -5,9 +5,16 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
+  /* Unified border radius for cards and buttons (less rounded) */
+  --radius: 6px;
+
   /* Estilo por defecto: Coco */
   --main-bg: #cbb89d;
+  --page-bg: #f4e9d6; /* logo color for page backgrounds */
+  --card-bg: #dfd1bd; /* darker than page-bg for card contrast on Quartos */
   --section-bg: #ede1d2;
+  --navbar-bg: rgba(255, 255, 255, 0.97);
+  --navbar-shadow: 0 1px 12px rgba(64, 48, 38, 0.08);
   --accent: #806044;
   --text: #412f26;
   --button: #806044;
@@ -36,6 +43,11 @@ body {
 /* Aumentar tamaño de fuente para Stigma */
 .font-stigma {
   font-size: 1.15em; /* 15% más grande */
+}
+
+/* Unified radius for cards and buttons - use this class instead of rounded-lg/rounded-xl */
+.rounded-default {
+  border-radius: var(--radius);
 }
 
 /* For hiding scrollbar */

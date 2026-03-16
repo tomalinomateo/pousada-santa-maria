@@ -1,39 +1,47 @@
-export const quartos = [
-  { id: 1, nome: "Mar", capacidade: 3, imagem: "/images/quartos/mar.jpg" },
-  {
-    id: 2,
-    nome: "Flamboyant",
-    capacidade: 3,
-    imagem: "/images/quartos/flamboyant.jpg",
-  },
-  {
-    id: 3,
-    nome: "Cajueiro",
-    capacidade: 3,
-    imagem: "/images/quartos/cajueiro.jpg",
-  },
-  {
-    id: 4,
-    nome: "Buriti",
-    capacidade: 2,
-    imagem: "/images/quartos/buriti.jpg",
-  },
-  {
-    id: 5,
-    nome: "Carnaúba",
-    capacidade: 4,
-    imagem: "/images/quartos/carnauba.jpg",
-  },
-  {
-    id: 6,
-    nome: "Plâncton",
-    capacidade: 4,
-    imagem: "/images/quartos/plancton.jpg",
-  },
-  {
-    id: 7,
-    nome: "MARESIA",
-    capacidade: 2,
-    imagem: "/images/quartos/maresia.jpg",
-  },
-];
+import { quartosList } from "./quartos-list";
+
+function roomImagePath(folder: string, filename: string): string {
+  return `/images/quartos/${encodeURIComponent(folder)}/${filename}`;
+}
+
+function folderToSlug(folder: string): string {
+  return folder
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
+export type Quarto = {
+  id: number;
+  nome: string;
+  capacidade: number;
+  folder: string;
+  slug: string;
+  images: string[];
+  imagem: string;
+};
+
+export const quartos: Quarto[] = quartosList.map((entry, index) => ({
+  id: index + 1,
+  nome: entry.nome,
+  capacidade: entry.capacidade,
+  folder: entry.folder,
+  slug: folderToSlug(entry.folder),
+  images: entry.images,
+  imagem: roomImagePath(
+    entry.folder,
+    entry.coverImage ?? entry.images[0]
+  ),
+}));
+
+export function getQuartoBySlug(slug: string): Quarto | undefined {
+  return quartos.find((q) => q.slug === slug);
+}
+
+export function getQuartoImages(quarto: Quarto): string[] {
+  return quarto.images.map((filename) =>
+    roomImagePath(quarto.folder, filename)
+  );
+}

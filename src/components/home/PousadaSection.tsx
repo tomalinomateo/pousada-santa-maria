@@ -10,13 +10,12 @@ export default function PousadaSection() {
   return (
     <section
       id="pousada"
-      className="py-8 md:py-16 px-4 md:px-8 max-w-7xl mx-auto"
+      className="py-6 md:py-10 px-4 md:px-8 max-w-7xl mx-auto"
       style={{
         color: "var(--text, #222)",
         background: BG_GRAY,
-        marginTop: 40,
-        marginBottom: 48,
-        boxShadow: "0 2px 16px #0001",
+        marginBottom: 32,
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
       <div className="flex justify-center mb-6">
@@ -28,12 +27,20 @@ export default function PousadaSection() {
           className="w-20 md:w-28 h-auto rounded-full object-contain shadow"
         />
       </div>
-      <h2
-        className="text-2xl md:text-4xl text-center mb-6 md:mb-10 tracking-widest uppercase font-bold"
-        style={{ color: GOLD }}
-      >
-        A Pousada
-      </h2>
+      <div className="text-center mb-6 md:mb-10">
+        <h2
+          className="text-2xl md:text-4xl tracking-widest uppercase font-bold"
+          style={{ color: GOLD }}
+        >
+          Pousada Santa Maria
+        </h2>
+        <p
+          className="mt-2 text-base md:text-lg normal-case tracking-wide opacity-90"
+          style={{ color: GRAY }}
+        >
+          Atins – Lençóis Maranhenses
+        </p>
+      </div>
       <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
         <div className="order-2 md:order-1">
           <p
@@ -51,7 +58,7 @@ export default function PousadaSection() {
                 background: GOLD,
                 color: "var(--button-text, #222)",
               }}
-              className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all uppercase flex items-center justify-center gap-2 text-lg"
+              className="w-full md:w-auto px-8 py-3 rounded-none font-semibold shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-500 ease-out uppercase flex items-center justify-center gap-2 text-lg"
             >
               <span className="md:hidden">Nossa pousada</span>
               <span className="hidden md:inline">Ver mais sobre a pousada</span>
@@ -61,7 +68,7 @@ export default function PousadaSection() {
         </div>
         <div className="relative h-[250px] md:h-[400px] overflow-hidden shadow-lg border border-[rgba(0,0,0,0.04)] order-1 md:order-2">
           <Image
-            src="/images/pousada/interior_1.jpg"
+            src="/images/pousada/pousada_3.jpg"
             alt="Interior da Pousada Santa Maria"
             fill
             className="object-cover"

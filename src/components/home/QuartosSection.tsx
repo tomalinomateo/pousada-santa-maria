@@ -30,12 +30,12 @@ export default function QuartosSection() {
 
   return (
     <section
-      className="py-12 md:py-24"
+      className="py-8 md:py-14"
       style={{
         color: "var(--text, #222)",
         background: BG_GRAY,
-        boxShadow: "0 2px 16px #0001",
-        marginBottom: 48,
+        marginBottom: 32,
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -50,7 +50,7 @@ export default function QuartosSection() {
       <div className="relative">
         <button
           onClick={() => handleScroll("left")}
-          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-transform duration-500 hover:scale-110"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-transform duration-500 ease-out hover:scale-105"
           aria-label="Scroll left"
         >
           <FaChevronLeft className="h-6 w-6" style={{ color: GOLD }} />
@@ -63,7 +63,7 @@ export default function QuartosSection() {
           {quartos.map((quarto) => (
             <div
               key={quarto.id}
-              className="flex-shrink-0 w-72 md:w-80 bg-white shadow-lg border border-[rgba(0,0,0,0.04)] flex flex-col transition-transform duration-500 hover:scale-105"
+              className="flex-shrink-0 w-72 md:w-80 bg-white shadow-lg border border-[rgba(0,0,0,0.04)] flex flex-col transition-transform duration-500 ease-out hover:scale-[1.02]"
             >
               <div className="relative h-48 md:h-56 bg-gray-100 overflow-hidden">
                 <Image
@@ -92,7 +92,7 @@ export default function QuartosSection() {
         </div>
         <button
           onClick={() => handleScroll("right")}
-          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-transform duration-500 hover:scale-110"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-transform duration-500 ease-out hover:scale-105"
           aria-label="Scroll right"
         >
           <FaChevronRight className="h-6 w-6" style={{ color: GOLD }} />
@@ -107,7 +107,7 @@ export default function QuartosSection() {
                 background: GOLD,
                 color: "var(--button-text, #222)",
               }}
-              className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all uppercase flex items-center justify-center gap-2 text-lg"
+              className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-500 ease-out uppercase flex items-center justify-center gap-2 text-lg"
             >
               <span className="md:hidden">Nossos quartos</span>
               <span className="hidden md:inline">Ver todos os quartos</span>

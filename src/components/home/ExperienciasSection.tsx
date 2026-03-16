@@ -44,7 +44,7 @@ const ExperienceCard = ({
       src={imagem}
       alt={nome}
       fill
-      className="object-cover transition-transform duration-500 group-hover:scale-110"
+      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
     <div className="absolute bottom-0 left-0 p-4 md:p-6">
@@ -62,10 +62,12 @@ const ExperienceCard = ({
 export default function ExperienciasSection() {
   return (
     <section
-      className="py-12 md:py-24"
+      className="py-8 md:py-14"
       style={{
         background: "var(--section-bg, #F3F4F6)",
         color: "var(--text, #222)",
+        marginBottom: 32,
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -106,7 +108,7 @@ export default function ExperienciasSection() {
                 background: GOLD,
                 color: "var(--button-text, #222)",
               }}
-              className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all uppercase flex items-center justify-center gap-2 text-lg"
+              className="w-full md:w-auto px-8 py-3 font-semibold shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-500 ease-out uppercase flex items-center justify-center gap-2 text-lg"
             >
               <span className="md:hidden">Experiências</span>
               <span className="hidden md:inline">

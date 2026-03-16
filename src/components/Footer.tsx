@@ -1,117 +1,80 @@
-import Link from "next/link";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
+import { getWhatsAppUrl, WHATSAPP_NUMBER } from "@/lib/whatsapp";
+
+function formatWhatsAppDisplay(num: string) {
+  if (num.startsWith("55")) {
+    return `+55 ${num.slice(2, 4)} ${num.slice(4, 9)}-${num.slice(9)}`;
+  }
+  if (num.startsWith("54")) {
+    return `+54 ${num.slice(2, 3)} ${num.slice(3, 6)} ${num.slice(6, 9)}-${num.slice(9)}`;
+  }
+  return num;
+}
 
 export default function Footer() {
+  const accent = "var(--accent, #4C583E)";
   return (
     <footer
-      className="w-full border-t pt-8 md:pt-10 pb-6 px-4"
+      className="w-full border-t pt-2 pb-2 px-4"
       style={{
         background: "var(--main-bg, #fff)",
         borderColor: "var(--accent, #4C583E)",
         color: "var(--text, #222)",
       }}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10">
-        {/* Contacto y reservas */}
-        <div className="flex-1 min-w-[220px]">
-          <div className="mb-4">
-            <span
-              className="block font-mono text-xs md:text-sm mb-1"
-              style={{ color: "var(--accent, #4C583E)" }}
-            >
-              RESERVAS:
-            </span>
-            <span className="block font-mono text-sm md:text-base mb-2">
-              contato@pousadasantamaria.com
-            </span>
-          </div>
-          <div className="mb-4">
-            <span
-              className="block font-mono text-xs md:text-sm mb-1"
-              style={{ color: "var(--accent, #4C583E)" }}
-            >
-              TELEFONE:
-            </span>
-            <span className="block font-mono text-sm md:text-base mb-2">
-              +55 99 99999-9999
-            </span>
-          </div>
-          <div className="mb-4">
-            <span
-              className="block font-mono text-xs md:text-sm mb-1"
-              style={{ color: "var(--accent, #4C583E)" }}
-            >
-              ENDEREÇO:
-            </span>
-            <span className="block font-mono text-sm md:text-base mb-2">
-              Atins - Lençóis Maranhenses, Brasil
-            </span>
-          </div>
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center md:justify-between gap-3 md:gap-4 text-xs md:text-sm">
+        <span className="font-mono flex items-center gap-1.5">
+          <span style={{ color: accent }}>Reservas:</span>
+          <a
+            href={getWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline flex items-center gap-1.5 transition-all duration-500 ease-out"
+            style={{ color: accent }}
+          >
+            <FaWhatsapp className="shrink-0" />
+            WhatsApp
+          </a>
+        </span>
+        <span className="font-mono hidden md:inline" style={{ color: "var(--text, #222)", opacity: 0.5 }}>·</span>
+        <a
+          href={getWhatsAppUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono hover:underline transition-all duration-500 ease-out"
+          style={{ color: accent }}
+        >
+          {formatWhatsAppDisplay(WHATSAPP_NUMBER)}
+        </a>
+        <span className="font-mono hidden md:inline" style={{ color: "var(--text, #222)", opacity: 0.5 }}>·</span>
+        <span className="font-mono">
+          Praia de Atins, Barreirinhas, MA
+        </span>
+        <span className="font-mono hidden md:inline" style={{ color: "var(--text, #222)", opacity: 0.5 }}>·</span>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://www.instagram.com/santamaria_atins/"
+            aria-label="Instagram"
+            style={{ color: accent }}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-base"
+          >
+            <FaInstagram />
+          </a>
         </div>
-        {/* Links útiles */}
-        <div className="flex-1 min-w-[220px]">
-          <ul className="font-mono text-sm md:text-base space-y-1">
-            <li>
-              <Link href="/contato" className="hover:underline">
-                Contato
-              </Link>
-            </li>
-            <li>
-              <Link href="/pousada" className="hover:underline">
-                A Pousada
-              </Link>
-            </li>
-            <li>
-              <Link href="/quartos" className="hover:underline">
-                Quartos
-              </Link>
-            </li>
-            <li>
-              <Link href="/experiencias" className="hover:underline">
-                Experiências
-              </Link>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Política de Privacidade
-              </a>
-            </li>
-          </ul>
-          <div className="flex gap-4 mt-4 md:mt-6 text-xl md:text-2xl">
-            <a
-              href="#"
-              aria-label="WhatsApp"
-              style={{ color: "var(--accent, #4C583E)" }}
-            >
-              <FaWhatsapp />
-            </a>
-            <a
-              href="https://www.instagram.com/santamaria_atins/"
-              aria-label="Instagram"
-              style={{ color: "var(--accent, #4C583E)" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-          </div>
-        </div>
-        {/* Logo */}
-        <div className="flex-1 min-w-[220px] flex flex-col items-center justify-center">
-          {/* Cambia logo.svg por el nombre real de tu archivo de logo */}
+        <span className="font-mono hidden md:inline" style={{ color: "var(--text, #222)", opacity: 0.5 }}>·</span>
+        <div className="flex items-center gap-2 md:gap-3">
           <Image
             src="/images/logo-1.jpeg"
             alt="Logo Pousada Santa Maria"
-            width={128}
-            height={128}
-            className="w-24 md:w-32 h-auto mb-2 opacity-80 rounded-full"
+            width={64}
+            height={64}
+            className="w-14 h-14 md:w-16 md:h-16 rounded-full opacity-80 object-cover"
             style={{ filter: "grayscale(1)" }}
           />
-          <span
-            className="font-mono text-xs mt-2"
-            style={{ color: "var(--accent, #4C583E)" }}
-          >
+          <span className="font-mono" style={{ color: accent }}>
             © {new Date().getFullYear()} Santa Maria
           </span>
         </div>
