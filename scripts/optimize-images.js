@@ -25,6 +25,8 @@ const MAX_WIDTH = 2000;
 const JPEG_QUALITY = 80;
 const PNG_QUALITY = 90;
 const WEBP_QUALITY = 82;
+// No output file may exceed this size (25 MiB)
+const MAX_FILE_SIZE_BYTES = 25 * 1024 * 1024;
 
 async function ensureDir(dirPath) {
   await fs.promises.mkdir(dirPath, { recursive: true });
@@ -62,54 +64,88 @@ async function optimizeImage(inputPath) {
   await ensureDir(outputDir);
 
   const ext = path.extname(inputPath).toLowerCase();
-  const image = sharp(inputPath, { animated: false });
-  const metadata = await image.metadata();
-
-  let pipeline = image.rotate();
-
-  if (metadata.width && metadata.width > MAX_WIDTH) {
-    pipeline = pipeline.resize({
-      width: MAX_WIDTH,
-      withoutEnlargement: true,
-      fit: 'inside',
-    });
-  }
-
-  if (ext === '.jpg' || ext === '.jpeg') {
-    pipeline = pipeline.jpeg({
-      quality: JPEG_QUALITY,
-      mozjpeg: true,
-      progressive: true,
-      chromaSubsampling: '4:4:4',
-    });
-  } else if (ext === '.png') {
-    pipeline = pipeline.png({
-      compressionLevel: 9,
-      quality: PNG_QUALITY,
-      palette: false,
-    });
-  } else if (ext === '.webp') {
-    pipeline = pipeline.webp({
-      quality: WEBP_QUALITY,
-    });
-  } else if (ext === '.avif') {
-    pipeline = pipeline.avif({
-      quality: 60,
-    });
-  }
-
-  await pipeline.toFile(outputPath);
-
   const originalStats = await fs.promises.stat(inputPath);
-  const optimizedStats = await fs.promises.stat(outputPath);
 
-  return {
-    inputPath,
-    outputPath,
-    originalSize: originalStats.size,
-    optimizedSize: optimizedStats.size,
-    savedBytes: originalStats.size - optimizedStats.size,
-  };
+  let quality = { jpeg: JPEG_QUALITY, png: PNG_QUALITY, webp: WEBP_QUALITY, avif: 60 };
+  let maxWidth = MAX_WIDTH;
+  const minQuality = 40;
+  const minWidth = 800;
+
+  while (true) {
+    const image = sharp(inputPath, { animated: false });
+    const metadata = await image.metadata();
+
+    let pipeline = image.rotate();
+
+    const width = Math.min(maxWidth, metadata.width || maxWidth);
+    if (metadata.width && metadata.width > width) {
+      pipeline = pipeline.resize({
+        width,
+        withoutEnlargement: true,
+        fit: 'inside',
+      });
+    }
+
+    if (ext === '.jpg' || ext === '.jpeg') {
+      pipeline = pipeline.jpeg({
+        quality: quality.jpeg,
+        mozjpeg: true,
+        progressive: true,
+        chromaSubsampling: '4:4:4',
+      });
+    } else if (ext === '.png') {
+      pipeline = pipeline.png({
+        compressionLevel: 9,
+        quality: quality.png,
+        palette: false,
+      });
+    } else if (ext === '.webp') {
+      pipeline = pipeline.webp({
+        quality: quality.webp,
+      });
+    } else if (ext === '.avif') {
+      pipeline = pipeline.avif({
+        quality: quality.avif,
+      });
+    }
+
+    await pipeline.toFile(outputPath);
+    const optimizedStats = await fs.promises.stat(outputPath);
+
+    if (optimizedStats.size <= MAX_FILE_SIZE_BYTES) {
+      return {
+        inputPath,
+        outputPath,
+        originalSize: originalStats.size,
+        optimizedSize: optimizedStats.size,
+        savedBytes: originalStats.size - optimizedStats.size,
+      };
+    }
+
+    // Reduce quality first, then width if still over limit
+    if (quality.jpeg > minQuality || quality.png > minQuality || quality.webp > minQuality || quality.avif > minQuality) {
+      quality = {
+        jpeg: Math.max(minQuality, quality.jpeg - 10),
+        png: Math.max(minQuality, quality.png - 10),
+        webp: Math.max(minQuality, quality.webp - 10),
+        avif: Math.max(30, quality.avif - 10),
+      };
+    } else if (maxWidth > minWidth) {
+      maxWidth = Math.max(minWidth, Math.floor(maxWidth * 0.8));
+    } else {
+      // Already at minimums; keep result and warn
+      console.warn(
+        `  ⚠ ${path.relative(INPUT_DIR, inputPath)} still ${formatBytes(optimizedStats.size)} (over ${formatBytes(MAX_FILE_SIZE_BYTES)}) after min quality/width`
+      );
+      return {
+        inputPath,
+        outputPath,
+        originalSize: originalStats.size,
+        optimizedSize: optimizedStats.size,
+        savedBytes: originalStats.size - optimizedStats.size,
+      };
+    }
+  }
 }
 
 function formatBytes(bytes) {
@@ -127,6 +163,7 @@ function formatBytes(bytes) {
 
 async function main() {
   console.log(`Scanning ${INPUT_DIR}...`);
+  console.log(`Max file size: ${formatBytes(MAX_FILE_SIZE_BYTES)} (will reduce quality/width until under limit)\n`);
 
   const allFiles = await walk(INPUT_DIR);
   const imageFiles = allFiles.filter(isSupportedImage);
