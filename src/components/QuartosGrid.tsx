@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { FaUsers, FaArrowRight } from "react-icons/fa";
 import type { Quarto } from "@/data/quartos";
+import { getQuartoBySlug } from "@/data/quartos";
 import RoomModal from "@/components/RoomModal";
 
 type QuartosGridProps = {
@@ -11,7 +13,16 @@ type QuartosGridProps = {
 };
 
 export default function QuartosGrid({ quartos }: QuartosGridProps) {
+  const searchParams = useSearchParams();
   const [selectedQuarto, setSelectedQuarto] = useState<Quarto | null>(null);
+
+  useEffect(() => {
+    const slug = searchParams.get("quarto");
+    if (slug) {
+      const quarto = getQuartoBySlug(slug);
+      if (quarto) setSelectedQuarto(quarto);
+    }
+  }, [searchParams]);
 
   return (
     <>
@@ -66,7 +77,10 @@ export default function QuartosGrid({ quartos }: QuartosGridProps) {
 
       <RoomModal
         quarto={selectedQuarto}
-        onClose={() => setSelectedQuarto(null)}
+        onClose={() => {
+          setSelectedQuarto(null);
+          window.history.replaceState(null, "", "/quartos");
+        }}
       />
     </>
   );

@@ -72,7 +72,6 @@ export default function Footer() {
             width={64}
             height={64}
             className="w-14 h-14 md:w-16 md:h-16 rounded-full opacity-80 object-cover"
-            style={{ filter: "grayscale(1)" }}
           />
           <span className="font-mono" style={{ color: accent }}>
             © {new Date().getFullYear()} Santa Maria

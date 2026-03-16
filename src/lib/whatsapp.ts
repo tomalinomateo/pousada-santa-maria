@@ -8,7 +8,7 @@ const DEFAULT_MESSAGE =
  */
 export function getWhatsAppUrl(roomName?: string): string {
   const text = roomName
-    ? `Olá! Gostaria de mais informações ou fazer uma reserva para o quarto: ${roomName}.`
+    ? `Olá! Gostaria de fazer uma reserva para o quarto "${roomName}".`
     : DEFAULT_MESSAGE;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }

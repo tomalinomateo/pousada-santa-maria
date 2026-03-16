@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ReservarButton from "@/components/ReservarButton";
+import PageHero from "@/components/PageHero";
 
 const mediumPhotos = [
   { src: "/images/pousada/pousada_3.jpg", alt: "Área externa da pousada" },
@@ -18,28 +19,11 @@ export default function PousadaPage() {
       className="min-h-screen"
       style={{ background: "var(--page-bg)" }}
     >
-      {/* Hero - same style as Quartos, Experiências, Como chegar */}
-      <section className="pt-28 pb-6 md:pt-36 md:pb-8 px-4 md:px-8 text-center w-full">
-        <p
-          className="text-sm md:text-base tracking-[0.3em] uppercase mb-2"
-          style={{ color: "var(--accent)" }}
-        >
-          Pousada Santa Maria
-        </p>
-        <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest uppercase mb-4"
-          style={{ color: "var(--text)" }}
-        >
-          A Pousada
-        </h1>
-        <p
-          className="text-lg md:text-xl max-w-xl mx-auto normal-case tracking-wide"
-          style={{ color: "var(--text)" }}
-        >
-          Pequena e tranquila em Atins: quartos confortáveis, áreas externas com verde,
-          redes e a areia sempre por perto.
-        </p>
-      </section>
+      <PageHero
+        surtitle="Pousada Santa Maria"
+        title="A Pousada"
+        subtitle="Pequena e tranquila em Atins: quartos confortáveis, áreas externas com verde, redes e a areia sempre por perto."
+      />
 
       {/* Description */}
       <section className="mx-auto max-w-3xl px-6 pb-8 md:px-10 text-center">
@@ -72,7 +56,7 @@ export default function PousadaPage() {
       </section>
 
       {/* Photos in rows of 3 - larger */}
-      <section className="mx-auto w-full max-w-7xl px-4 py-10 pb-20 md:px-8">
+      <section className="mx-auto w-full max-w-7xl px-4 py-10 pb-12 md:pb-16 md:px-8">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {mediumPhotos.map((photo) => (
             <div

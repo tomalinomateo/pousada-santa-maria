@@ -31,7 +31,7 @@ export default async function QuartoDetailPage({ params }: Props) {
 
   return (
     <main
-      className="min-h-screen pt-24 pb-16"
+      className="min-h-screen pt-24 pb-12 md:pb-16"
       style={{ background: "var(--page-bg)" }}
     >
       <div className="max-w-4xl mx-auto px-4 md:px-8">

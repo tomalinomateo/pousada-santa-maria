@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { getWhatsAppUrlWithMessage } from "@/lib/whatsapp";
+import PageHero from "@/components/PageHero";
 
 // Card data for the grid
 const EXPERIENCE_CARDS = [
@@ -73,31 +74,14 @@ const EXPERIENCE_CARDS = [
 export default function ExperienciasPage() {
   return (
     <main className="min-h-screen" style={{ background: "var(--page-bg)" }}>
-      {/* Hero - mesma estrutura das outras páginas */}
-      <section className="pt-28 pb-6 md:pt-36 md:pb-8 px-4 md:px-8 text-center w-full">
-        <p
-          className="text-sm md:text-base tracking-[0.3em] uppercase mb-2"
-          style={{ color: "var(--accent)" }}
-        >
-          Pousada Santa Maria
-        </p>
-        <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest uppercase mb-4"
-          style={{ color: "var(--text)" }}
-        >
-          Experiências
-        </h1>
-        <p
-          className="text-lg md:text-xl max-w-xl mx-auto normal-case tracking-wide"
-          style={{ color: "var(--text)" }}
-        >
-          Atins e os Lençóis: aventura, natureza e tranquilidade em roteiros que revelam dunas,
-          lagoas e o ritmo simples do litoral.
-        </p>
-      </section>
+      <PageHero
+        surtitle="Pousada Santa Maria"
+        title="Experiências"
+        subtitle="Atins e os Lençóis: aventura, natureza e tranquilidade em roteiros que revelam dunas, lagoas e o ritmo simples do litoral."
+      />
 
       {/* Cards grid */}
-      <section className="px-4 md:px-8 pb-20 md:pb-28">
+      <section className="px-4 md:px-8 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {EXPERIENCE_CARDS.map((card) => (
             <article

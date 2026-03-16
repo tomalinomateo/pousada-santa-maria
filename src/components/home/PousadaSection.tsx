@@ -10,7 +10,7 @@ export default function PousadaSection() {
   return (
     <section
       id="pousada"
-      className="py-6 md:py-10 px-4 md:px-8 max-w-7xl mx-auto"
+      className="w-full py-6 md:py-10 px-4 md:px-8"
       style={{
         color: "var(--text, #222)",
         background: BG_GRAY,
