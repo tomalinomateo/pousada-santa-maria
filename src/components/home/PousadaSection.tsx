@@ -29,14 +29,14 @@ export default function PousadaSection() {
       </div>
       <div className="text-center mb-6 md:mb-10">
         <h2
-          className="text-2xl md:text-4xl tracking-widest uppercase font-bold"
-          style={{ color: GOLD }}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest uppercase mb-4"
+          style={{ color: "var(--text)" }}
         >
           Pousada Santa Maria
         </h2>
         <p
-          className="mt-2 text-base md:text-lg normal-case tracking-wide opacity-90"
-          style={{ color: GRAY }}
+          className="text-lg md:text-xl max-w-xl mx-auto normal-case tracking-wide"
+          style={{ color: "var(--text)" }}
         >
           Atins – Lençóis Maranhenses
         </p>

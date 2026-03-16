@@ -13,7 +13,7 @@ export default function QuartosPage() {
       <PageHero
         surtitle="Pousada Santa Maria"
         title="Quartos"
-        subtitle="Conheça nossos quartos e villas em Atins, Lençóis Maranhenses."
+        subtitle="Conheça nossos quartos e villas em Atins."
       />
 
       <section className="px-4 md:px-8 pb-12">

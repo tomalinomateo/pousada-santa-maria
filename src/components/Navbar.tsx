@@ -23,7 +23,7 @@ function NavLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto relative inline-block ${
+      className={`hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-fit md:w-auto relative inline-block ${
         isActive ? "pb-0.5 border-b-2 border-current opacity-100" : ""
       }`}
       style={{ color: "var(--accent, #4C583E)" }}
@@ -47,8 +47,8 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-4 py-2 uppercase mx-4 md:mx-8 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)]">
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-widest"
-          style={{ color: "var(--accent, #4C583E)" }}
+          className="flex items-center gap-2 text-2xl font-bold tracking-widest"
+          style={{ color: "var(--text)" }}
         >
           <Image
             src="/images/logo-1.jpeg"
