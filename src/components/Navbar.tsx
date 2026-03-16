@@ -1,10 +1,37 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBars, FaTimes, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import ReservarButton from "./ReservarButton";
+
+function NavLink({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick: () => void;
+}) {
+  const pathname = usePathname();
+  const isActive =
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto relative inline-block ${
+        isActive ? "pb-0.5 border-b-2 border-current opacity-100" : ""
+      }`}
+      style={{ color: "var(--accent, #4C583E)" }}
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,46 +84,21 @@ export default function Navbar() {
           data-open={isOpen}
           aria-hidden={!isOpen}
         >
-          <Link
-            href="/"
-            className="hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto"
-            style={{ color: "var(--accent, #4C583E)" }}
-            onClick={() => setIsOpen(false)}
-          >
+          <NavLink href="/" onClick={() => setIsOpen(false)}>
             Início
-          </Link>
-          <Link
-            href="/pousada"
-            className="hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto"
-            style={{ color: "var(--accent, #4C583E)" }}
-            onClick={() => setIsOpen(false)}
-          >
+          </NavLink>
+          <NavLink href="/pousada" onClick={() => setIsOpen(false)}>
             A Pousada
-          </Link>
-          <Link
-            href="/quartos"
-            className="hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto"
-            style={{ color: "var(--accent, #4C583E)" }}
-            onClick={() => setIsOpen(false)}
-          >
+          </NavLink>
+          <NavLink href="/quartos" onClick={() => setIsOpen(false)}>
             Quartos
-          </Link>
-          <Link
-            href="/como-chegar"
-            className="hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto"
-            style={{ color: "var(--accent, #4C583E)" }}
-            onClick={() => setIsOpen(false)}
-          >
+          </NavLink>
+          <NavLink href="/como-chegar" onClick={() => setIsOpen(false)}>
             Como chegar
-          </Link>
-          <Link
-            href="/experiencias"
-            className="hover:opacity-80 transition-all duration-500 ease-out py-4 md:py-0 w-full text-center md:w-auto"
-            style={{ color: "var(--accent, #4C583E)" }}
-            onClick={() => setIsOpen(false)}
-          >
+          </NavLink>
+          <NavLink href="/experiencias" onClick={() => setIsOpen(false)}>
             Experiências
-          </Link>
+          </NavLink>
           <span onClick={() => setIsOpen(false)} className="w-full md:w-auto block">
             <ReservarButton className="w-full md:w-auto px-12 py-4 md:px-8 md:py-3" />
           </span>

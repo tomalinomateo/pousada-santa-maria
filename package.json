@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "prepare": "husky"
   },
   "dependencies": {
     "@cloudflare/stream-react": "^1.9.3",
@@ -27,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.9",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

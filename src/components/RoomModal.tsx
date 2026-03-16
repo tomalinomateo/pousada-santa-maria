@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { createPortal } from "react-dom";
+import { FaTimes, FaUsers } from "react-icons/fa";
 import type { Quarto } from "@/data/quartos";
 import { getQuartoImages } from "@/data/quartos";
 import ReservarButton from "@/components/ReservarButton";
@@ -42,9 +43,9 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
 
   const images = getQuartoImages(quarto);
 
-  return (
+  const modalContent = (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ease-out ${
+      className={`fixed inset-0 z-[200] bg-black/70 backdrop-blur-sm transition-opacity duration-500 ease-out ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       onClick={handleClose}
@@ -53,7 +54,7 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
       aria-label={`Detalhes: ${quarto.nome}`}
     >
       <div
-        className={`relative w-full max-w-5xl h-[90vh] overflow-y-auto rounded-xl shadow-2xl transition-transform duration-500 ease-out ${
+        className={`absolute inset-[2.5%] overflow-y-auto transition-transform duration-500 ease-out ${
           visible ? "scale-100 translate-y-0" : "scale-95 translate-y-2"
         }`}
         style={{ background: "var(--card-bg)" }}
@@ -62,13 +63,18 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
         <button
           type="button"
           onClick={handleClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/30 hover:bg-black/40 text-white transition-all duration-500 ease-out"
+          className="fixed top-4 right-4 z-[210] flex items-center justify-center w-10 h-10 rounded-full border-2 shadow-lg transition-all duration-500 ease-out hover:scale-105"
+          style={{
+            background: "var(--page-bg)",
+            borderColor: "var(--accent)",
+            color: "var(--accent)",
+          }}
           aria-label="Fechar"
         >
           <FaTimes className="text-xl" />
         </button>
 
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 pt-6 md:pt-8">
           <header className="mb-6">
             <h2
               className="text-2xl md:text-3xl font-bold uppercase pr-10"
@@ -76,7 +82,8 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
             >
               {quarto.nome}
             </h2>
-            <p className="text-base mt-1" style={{ color: "var(--text)" }}>
+            <p className="text-base mt-1 flex items-center gap-2" style={{ color: "var(--text)" }}>
+              <FaUsers className="shrink-0" />
               Até {quarto.capacidade} pessoas
             </p>
           </header>
@@ -107,4 +114,7 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
       </div>
     </div>
   );
+
+  if (typeof document === "undefined") return null;
+  return createPortal(modalContent, document.body);
 }

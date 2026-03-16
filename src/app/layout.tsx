@@ -3,6 +3,7 @@ import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import { localFonts } from "@/lib/fonts";
 
 const josefin = Josefin_Sans({
@@ -32,7 +33,12 @@ export default function RootLayout({
     <html lang="en" data-theme="coco">
       <body className={`${josefin.variable} ${localFontVariables} font-sans`}>
         <Navbar />
-        <div className="min-h-[80vh]">{children}</div>
+        <div
+          className="min-h-[80vh]"
+          style={{ background: "var(--page-bg)" }}
+        >
+          <PageTransition>{children}</PageTransition>
+        </div>
         <Footer />
       </body>
     </html>

@@ -31,10 +31,7 @@ export default function PousadaPage() {
           className="text-base md:text-lg leading-relaxed"
           style={{ color: "var(--text)" }}
         >
-          A Santa Maria é pensada para quem gosta de voltar dos passeios, tomar um
-          banho gostoso e descansar de verdade. Nada é exagerado: boa cama, bom
-          chuveiro, luz natural, sombra e vento. O resto vem de Atins — o mar, o céu,
-          o silêncio e os Lençóis logo ali.
+          A Santa Maria foi pensada para quem quer viver Atins com calma e conforto. Quartos agradáveis, banho gostoso, luz natural e uma atmosfera tranquila criam o cenário ideal para descansar. Pela manhã, o café da manhã bem servido completa a experiência. O resto vem de Atins: o mar, o céu, o vento e os Lençóis logo ali.
         </p>
         <ReservarButton className="mt-8 bg-[#D6B24C] text-[#1C140D] hover:bg-[#e0c065]">
           Reservar agora
