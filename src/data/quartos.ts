@@ -1,11 +1,9 @@
 import { quartosList } from "./quartos-list";
+import { getCapa, getGaleria } from "./galeria-manifest";
+import type { ImagemGaleria } from "./galeria";
 
-function roomImagePath(folder: string, filename: string): string {
-  return `/images/quartos/${encodeURIComponent(folder)}/${filename}`;
-}
-
-function folderToSlug(folder: string): string {
-  return folder
+function nomeToSlug(nome: string): string {
+  return nome
     .toLowerCase()
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
@@ -16,32 +14,51 @@ function folderToSlug(folder: string): string {
 export type Quarto = {
   id: number;
   nome: string;
-  capacidade: number;
-  folder: string;
+  /** Ausente mientras no esté cargada: el sitio omite el dato en vez de inventarlo */
+  capacidade?: number;
+  grupo: string;
   slug: string;
-  images: string[];
-  imagem: string;
+  /** Fotos del cuarto, en el orden del manifest */
+  imagens: ImagemGaleria[];
+  /** Portada para grillas y carruseles */
+  capa?: ImagemGaleria;
 };
 
+/**
+ * Este módulo importa el manifest (vía ./galeria). Usalo sólo desde server
+ * components y pasá los cuartos por props: así el JSON no entra al bundle del
+ * browser.
+ */
 export const quartos: Quarto[] = quartosList.map((entry, index) => ({
   id: index + 1,
   nome: entry.nome,
   capacidade: entry.capacidade,
-  folder: entry.folder,
-  slug: folderToSlug(entry.folder),
-  images: entry.images,
-  imagem: roomImagePath(
-    entry.folder,
-    entry.coverImage ?? entry.images[0]
-  ),
+  grupo: entry.grupo,
+  slug: nomeToSlug(entry.nome),
+  imagens: getGaleria(entry.grupo),
+  capa: getCapa(entry.grupo, entry.capaId),
 }));
 
 export function getQuartoBySlug(slug: string): Quarto | undefined {
   return quartos.find((q) => q.slug === slug);
 }
 
-export function getQuartoImages(quarto: Quarto): string[] {
-  return quarto.images.map((filename) =>
-    roomImagePath(quarto.folder, filename)
-  );
-}
+/**
+ * Versión liviana, sin la galería completa: sólo lo que necesitan las vistas que
+ * muestran la portada (el carrusel del home). Evita serializar los placeholders
+ * de todas las fotos en páginas que no las van a mostrar.
+ */
+export type QuartoResumo = Pick<
+  Quarto,
+  "id" | "nome" | "slug" | "capacidade" | "capa"
+>;
+
+export const quartosResumo: QuartoResumo[] = quartos.map(
+  ({ id, nome, slug, capacidade, capa }) => ({
+    id,
+    nome,
+    slug,
+    capacidade,
+    capa,
+  })
+);

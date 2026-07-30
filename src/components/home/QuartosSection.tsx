@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaArrowRight,
@@ -9,7 +8,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
-import { quartos } from "@/data/quartos";
+import type { QuartoResumo } from "@/data/quartos";
+import ImagemGaleria from "@/components/ImagemGaleria";
 
 const GOLD = "var(--accent, #D6B24C)";
 
@@ -50,7 +50,11 @@ function useScrollArrows(containerRef: React.RefObject<HTMLDivElement | null>) {
   return { showLeft, showRight };
 }
 
-export default function QuartosSection() {
+type QuartosSectionProps = {
+  quartos: QuartoResumo[];
+};
+
+export default function QuartosSection({ quartos }: QuartosSectionProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { showLeft, showRight } = useScrollArrows(scrollContainerRef);
 
@@ -105,12 +109,12 @@ export default function QuartosSection() {
               className="flex-shrink-0 w-72 md:w-80 bg-white shadow-lg border border-[rgba(0,0,0,0.04)] flex flex-col transition-transform duration-500 ease-out hover:scale-[1.02]"
             >
               <div className="relative h-48 md:h-56 bg-gray-100 overflow-hidden">
-                <Image
-                  src={quarto.imagem}
-                  alt={`Foto do quarto ${quarto.nome}`}
-                  fill
-                  className="object-cover"
-                />
+                {quarto.capa && (
+                  <ImagemGaleria
+                    imagem={quarto.capa}
+                    sizes="(max-width: 768px) 288px, 320px"
+                  />
+                )}
               </div>
               <div className="p-4 md:p-6 flex-1 flex flex-col justify-between">
                 <div>
@@ -120,10 +124,12 @@ export default function QuartosSection() {
                   >
                     {quarto.nome}
                   </h3>
-                  <div className="inline-flex items-center gap-2 bg-black/5 text-black/70 font-semibold text-xs px-3 py-1 rounded-full">
-                    <FaUsers />
-                    <span>{quarto.capacidade} pessoas</span>
-                  </div>
+                  {quarto.capacidade !== undefined && (
+                    <div className="inline-flex items-center gap-2 bg-black/5 text-black/70 font-semibold text-xs px-3 py-1 rounded-full">
+                      <FaUsers />
+                      <span>{quarto.capacidade} pessoas</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>

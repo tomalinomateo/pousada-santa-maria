@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaUsers, FaArrowRight } from "react-icons/fa";
 import type { Quarto } from "@/data/quartos";
-import { getQuartoBySlug } from "@/data/quartos";
+import ImagemGaleria from "@/components/ImagemGaleria";
 import RoomModal from "@/components/RoomModal";
 
 type QuartosGridProps = {
@@ -19,10 +18,10 @@ export default function QuartosGrid({ quartos }: QuartosGridProps) {
   useEffect(() => {
     const slug = searchParams.get("quarto");
     if (slug) {
-      const quarto = getQuartoBySlug(slug);
+      const quarto = quartos.find((q) => q.slug === slug);
       if (quarto) setSelectedQuarto(quarto);
     }
-  }, [searchParams]);
+  }, [searchParams, quartos]);
 
   return (
     <>
@@ -36,27 +35,29 @@ export default function QuartosGrid({ quartos }: QuartosGridProps) {
             style={{ background: "var(--navbar-bg, rgba(255,255,255,0.97))" }}
           >
             <div className="relative aspect-[3/2] overflow-hidden">
-              <Image
-                src={quarto.imagem}
-                alt={quarto.nome}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              {quarto.capa && (
+                /* Grilla de 2 columnas dentro de max-w-6xl: ~560px por columna */
+                <ImagemGaleria
+                  imagem={quarto.capa}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1152px) 50vw, 560px"
+                />
+              )}
             </div>
             <div className="p-4 md:p-5">
-              <div className="inline-flex items-center gap-2 mb-2">
-                <FaUsers
-                  className="text-xs md:text-sm opacity-80"
-                  style={{ color: "var(--accent)" }}
-                />
-                <span
-                  className="text-xs md:text-sm font-semibold uppercase tracking-wide"
-                  style={{ color: "var(--text)" }}
-                >
-                  Até {quarto.capacidade} pessoas
-                </span>
-              </div>
+              {quarto.capacidade !== undefined && (
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <FaUsers
+                    className="text-xs md:text-sm opacity-80"
+                    style={{ color: "var(--accent)" }}
+                  />
+                  <span
+                    className="text-xs md:text-sm font-semibold uppercase tracking-wide"
+                    style={{ color: "var(--text)" }}
+                  >
+                    Até {quarto.capacidade} pessoas
+                  </span>
+                </div>
+              )}
               <h2
                 className="text-lg md:text-xl font-bold uppercase mb-1.5"
                 style={{ color: "var(--accent)" }}

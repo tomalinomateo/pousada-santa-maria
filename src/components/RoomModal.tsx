@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { FaTimes, FaUsers } from "react-icons/fa";
 import type { Quarto } from "@/data/quartos";
-import { getQuartoImages } from "@/data/quartos";
+import ImagemGaleria from "@/components/ImagemGaleria";
 import ReservarButton from "@/components/ReservarButton";
 
 type RoomModalProps = {
@@ -40,8 +39,6 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
       onClose();
     }, 200);
   };
-
-  const images = getQuartoImages(quarto);
 
   const modalContent = (
     <div
@@ -82,24 +79,25 @@ export default function RoomModal({ quarto, onClose }: RoomModalProps) {
             >
               {quarto.nome}
             </h2>
-            <p className="text-base mt-1 flex items-center gap-2" style={{ color: "var(--text)" }}>
-              <FaUsers className="shrink-0" />
-              Até {quarto.capacidade} pessoas
-            </p>
+            {quarto.capacidade !== undefined && (
+              <p className="text-base mt-1 flex items-center gap-2" style={{ color: "var(--text)" }}>
+                <FaUsers className="shrink-0" />
+                Até {quarto.capacidade} pessoas
+              </p>
+            )}
           </header>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {images.map((src, i) => (
+            {quarto.imagens.map((imagem, i) => (
               <div
-                key={src}
+                key={imagem.id}
                 className="relative aspect-[4/3] rounded-none overflow-hidden bg-white/50"
               >
-                <Image
-                  src={src}
-                  alt={`${quarto.nome} - foto ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
+                {/* Modal a 95vw, grilla de 2 columnas: ~46vw por columna */}
+                <ImagemGaleria
+                  imagem={imagem}
+                  sizes="(max-width: 640px) 95vw, 46vw"
+                  priority={i === 0}
                 />
               </div>
             ))}
