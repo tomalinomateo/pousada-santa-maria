@@ -24,12 +24,7 @@ export type Quarto = {
   capa?: ImagemGaleria;
 };
 
-/**
- * Este módulo importa el manifest (vía ./galeria). Usalo sólo desde server
- * components y pasá los cuartos por props: así el JSON no entra al bundle del
- * browser.
- */
-export const quartos: Quarto[] = quartosList.map((entry, index) => ({
+const todosOsQuartos: Quarto[] = quartosList.map((entry, index) => ({
   id: index + 1,
   nome: entry.nome,
   capacidade: entry.capacidade,
@@ -38,6 +33,31 @@ export const quartos: Quarto[] = quartosList.map((entry, index) => ({
   imagens: getGaleria(entry.grupo),
   capa: getCapa(entry.grupo, entry.capaId),
 }));
+
+/** Cuartos declarados en la lista que todavía no tienen fotos en el manifest. */
+export const quartosSemFotos: Quarto[] = todosOsQuartos.filter(
+  (quarto) => quarto.imagens.length === 0
+);
+
+/**
+ * Cuartos que el sitio publica. Se publican todos, incluso los que todavía no
+ * tienen fotos: esos aparecen con el recuadro de imagen vacío y la galería en
+ * blanco hasta que su grupo exista en el manifest. Agregar las fotos y
+ * regenerar el manifest los completa solo, sin tocar código.
+ *
+ * Este módulo importa el manifest (vía ./galeria-manifest). Usalo sólo desde
+ * server components y pasá los cuartos por props: así el JSON no entra al
+ * bundle del browser.
+ */
+export const quartos: Quarto[] = todosOsQuartos;
+
+if (quartosSemFotos.length > 0) {
+  console.warn(
+    `[quartos] Publicados sin fotos, con la galería vacía: ${quartosSemFotos
+      .map((q) => `${q.nome} (falta el grupo "${q.grupo}" en el manifest)`)
+      .join(", ")}`
+  );
+}
 
 export function getQuartoBySlug(slug: string): Quarto | undefined {
   return quartos.find((q) => q.slug === slug);

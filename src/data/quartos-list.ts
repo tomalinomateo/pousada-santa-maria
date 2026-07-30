@@ -26,5 +26,7 @@ export const quartosList: QuartoEntry[] = [
   { nome: "Flamboyant", grupo: "cuarto-5" },
   { nome: "Cajueiro", grupo: "cuarto-6" },
   { nome: "Carnauba", grupo: "cuarto-7" },
-  // Buriti: pendiente, todavía no hay fotos suyas en el manifest.
+  // Buriti se publica sin fotos: la galería queda vacía hasta que exista el
+  // grupo "cuarto-8" en el manifest. El build avisa por consola mientras falte.
+  { nome: "Buriti", grupo: "cuarto-8" },
 ];
