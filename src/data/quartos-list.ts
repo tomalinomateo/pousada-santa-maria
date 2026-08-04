@@ -19,14 +19,14 @@ export type QuartoEntry = {
 };
 
 export const quartosList: QuartoEntry[] = [
-  { nome: "Maresia Deluxe", grupo: "cuarto-1" },
-  { nome: "Maresia", grupo: "cuarto-2" },
-  { nome: "Plancton", grupo: "cuarto-3" },
-  { nome: "Mar", grupo: "cuarto-4" },
-  { nome: "Flamboyant", grupo: "cuarto-5" },
-  { nome: "Cajueiro", grupo: "cuarto-6" },
-  { nome: "Carnauba", grupo: "cuarto-7" },
+  { nome: "Maresia Deluxe", grupo: "cuarto-1", capacidade: 2 },
+  { nome: "Maresia", grupo: "cuarto-2", capacidade: 2 },
+  { nome: "Plancton", grupo: "cuarto-3", capacidade: 4 },
+  { nome: "Mar", grupo: "cuarto-4", capacidade: 3 },
+  { nome: "Flamboyant", grupo: "cuarto-5", capacidade: 3 },
+  { nome: "Cajueiro", grupo: "cuarto-6", capacidade: 3 },
+  { nome: "Carnauba", grupo: "cuarto-7", capacidade: 4 },
   // Buriti se publica sin fotos: la galería queda vacía hasta que exista el
   // grupo "cuarto-8" en el manifest. El build avisa por consola mientras falte.
-  { nome: "Buriti", grupo: "cuarto-8" },
+  { nome: "Buriti", grupo: "cuarto-8", capacidade: 2 },
 ];
