@@ -22,8 +22,8 @@ export const quartosList: QuartoEntry[] = [
   { nome: "Maresia Deluxe", grupo: "cuarto-1", capacidade: 2 },
   { nome: "Maresia", grupo: "cuarto-2", capacidade: 2 },
   { nome: "Plancton", grupo: "cuarto-3", capacidade: 4 },
-  { nome: "Mar", grupo: "cuarto-4", capacidade: 3 },
-  { nome: "Flamboyant", grupo: "cuarto-5", capacidade: 3 },
+  { nome: "Mar", grupo: "cuarto-4", capacidade: 3, capaId: "sm-33" },
+  { nome: "Flamboyant", grupo: "cuarto-5", capacidade: 3, capaId: "sm-33" },
   { nome: "Cajueiro", grupo: "cuarto-6", capacidade: 3 },
   { nome: "Carnauba", grupo: "cuarto-7", capacidade: 4 },
   // Buriti se publica sin fotos: la galería queda vacía hasta que exista el
