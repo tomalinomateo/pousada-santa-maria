@@ -3,7 +3,10 @@ import ReservarButton from "@/components/ReservarButton";
 import PageHero from "@/components/PageHero";
 
 const mediumPhotos = [
-  { src: "/images/pousada/pousada_3.jpg", alt: "Área externa da pousada" },
+  {
+    src: "/images/pousada/pousada_11.jpg",
+    alt: "Área de convivência da pousada à noite",
+  },
   { src: "/images/pousada/pousada_4.jpg", alt: "Redes e área de descanso" },
   { src: "/images/pousada/pousada_5.jpg", alt: "Detalhes da pousada" },
   { src: "/images/pousada/pousada_6.jpg", alt: "Pousada Santa Maria" },
