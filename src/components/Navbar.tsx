@@ -51,11 +51,11 @@ export default function Navbar() {
           style={{ color: "var(--text)" }}
         >
           <Image
-            src="/images/logo-1.jpeg"
+            src="/images/logo-om.png"
             alt="Logo Pousada Santa Maria"
             width={56}
             height={56}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover"
+            className="w-8 h-8 md:w-9 md:h-9 object-contain"
           />
           <div className="flex flex-col">
             <span>Santa Maria</span>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Pousada Santa Maria",
   description: "Pousada Santa Maria em Atins, Lençóis Maranhenses",
   icons: {
-    icon: "/images/logo-1.jpeg",
+    icon: "/images/logo-om-icon.png",
   },
 };
 

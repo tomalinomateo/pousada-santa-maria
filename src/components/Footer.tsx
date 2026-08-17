@@ -67,11 +67,11 @@ export default function Footer() {
         <span className="font-mono hidden md:inline" style={{ color: "var(--text, #222)", opacity: 0.5 }}>·</span>
         <div className="flex items-center gap-2 md:gap-3">
           <Image
-            src="/images/logo-1.jpeg"
+            src="/images/logo-om.png"
             alt="Logo Pousada Santa Maria"
             width={64}
             height={64}
-            className="w-14 h-14 md:w-16 md:h-16 rounded-full opacity-80 object-cover"
+            className="w-7 h-7 md:w-8 md:h-8 opacity-80 object-contain"
           />
           <span className="font-mono" style={{ color: accent }}>
             © {new Date().getFullYear()} Santa Maria
