@@ -80,11 +80,16 @@ export default function QuartosSection({ quartos }: QuartosSectionProps) {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <h2
-          className="text-2xl md:text-4xl text-center mb-6 md:mb-10 tracking-widest uppercase font-bold"
+          className="text-2xl md:text-4xl text-center mb-3 md:mb-4 tracking-widest uppercase font-bold"
           style={{ color: GOLD }}
         >
           Quartos
         </h2>
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-10">
+          <p className="text-lg" style={{ color: "var(--text, #444)" }}>
+            Quartos com o conforto certo e a natureza por perto.
+          </p>
+        </div>
       </div>
 
       <div className="relative">
