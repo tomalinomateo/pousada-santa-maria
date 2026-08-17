@@ -143,8 +143,8 @@ export default function ReservarSection() {
             <div className="relative">
               <div className="relative h-80 md:h-96 overflow-hidden rounded-default shadow-2xl">
                 <Image
-                  src="/images/pousada/pousada_2.jpg"
-                  alt="Pousada Santa Maria - Vista da pousada"
+                  src="/images/pousada/pousada_sunset.jpg"
+                  alt="Pousada Santa Maria - Deck sobre o mar ao pôr do sol"
                   fill
                   className="object-cover"
                 />

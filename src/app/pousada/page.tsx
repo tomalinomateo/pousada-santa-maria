@@ -42,8 +42,8 @@ export default function PousadaPage() {
       <section className="w-full px-0">
         <div className="relative flex min-h-[80vh] w-full items-center justify-center" style={{ background: "var(--page-bg)" }}>
           <Image
-            src="/images/pousada/pousada_2.jpg"
-            alt="Vista da pousada Santa Maria"
+            src="/images/pousada/pousada_sunset.jpg"
+            alt="Deck da pousada Santa Maria sobre o mar ao pôr do sol"
             fill
             priority
             className="object-contain"
