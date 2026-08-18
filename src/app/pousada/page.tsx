@@ -13,7 +13,18 @@ const mediumPhotos = [
   { src: "/images/pousada/pousada_7.jpg", alt: "Pousada Santa Maria" },
   { src: "/images/pousada/pousada_8.jpg", alt: "Pousada Santa Maria" },
   { src: "/images/pousada/pousada_9.jpg", alt: "Pousada Santa Maria" },
-  { src: "/images/pousada/pousada_10.jpg", alt: "Pousada Santa Maria" },
+  {
+    src: "/images/pousada/pousada_12.jpg",
+    alt: "Deck sobre o mar ao entardecer",
+  },
+  {
+    src: "/images/pousada/pousada_13.jpg",
+    alt: "Corredor da pousada à noite",
+  },
+  {
+    src: "/images/pousada/pousada_15.jpg",
+    alt: "Cerveja gelada no deck ao pôr do sol",
+  },
 ];
 
 export default function PousadaPage() {
