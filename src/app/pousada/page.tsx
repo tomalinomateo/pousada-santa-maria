@@ -2,7 +2,7 @@ import Image from "next/image";
 import ReservarButton from "@/components/ReservarButton";
 import PageHero from "@/components/PageHero";
 
-const mediumPhotos = [
+const mediumPhotos: { src: string; alt: string; position?: string }[] = [
   {
     src: "/images/pousada/pousada_11.jpg",
     alt: "Área de convivência da pousada à noite",
@@ -12,7 +12,12 @@ const mediumPhotos = [
   { src: "/images/pousada/pousada_6.jpg", alt: "Pousada Santa Maria" },
   { src: "/images/pousada/pousada_7.jpg", alt: "Pousada Santa Maria" },
   { src: "/images/pousada/pousada_8.jpg", alt: "Pousada Santa Maria" },
-  { src: "/images/pousada/pousada_9.jpg", alt: "Pousada Santa Maria" },
+  {
+    src: "/images/pousada/pousada_9.jpg",
+    alt: "Coqueiros e bangalos da pousada",
+    // Foto vertical: sem esse ajuste o corte 4:3 esconde o jardim
+    position: "50% 70%",
+  },
   {
     src: "/images/pousada/pousada_12.jpg",
     alt: "Deck sobre o mar ao entardecer",
@@ -87,6 +92,7 @@ export default function PousadaPage() {
                 alt={photo.alt}
                 fill
                 className="object-cover"
+                style={{ objectPosition: photo.position ?? "center" }}
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
