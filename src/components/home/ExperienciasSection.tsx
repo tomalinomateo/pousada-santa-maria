@@ -39,7 +39,10 @@ const ExperienceCard = ({
   imagem,
   imageHeight = "h-64",
 }: ExperienceCardProps) => (
-  <div className={`relative shadow-lg overflow-hidden group ${imageHeight}`}>
+  <Link
+    href="/experiencias"
+    className={`relative block shadow-lg overflow-hidden group ${imageHeight}`}
+  >
     <Image
       src={imagem}
       alt={nome}
@@ -56,7 +59,7 @@ const ExperienceCard = ({
         {nome}
       </h3>
     </div>
-  </div>
+  </Link>
 );
 
 export default function ExperienciasSection() {
