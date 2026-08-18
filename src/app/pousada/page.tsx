@@ -25,6 +25,14 @@ const mediumPhotos = [
     src: "/images/pousada/pousada_15.jpg",
     alt: "Cerveja gelada no deck ao pôr do sol",
   },
+  {
+    src: "/images/pousada/pousada_16.jpg",
+    alt: "Café da manhã com frutas frescas",
+  },
+  {
+    src: "/images/pousada/pousada_17.jpg",
+    alt: "Rede entre os coqueiros no jardim",
+  },
 ];
 
 export default function PousadaPage() {
