@@ -32,12 +32,14 @@ interface ExperienceCardProps {
   nome: string;
   imagem: string;
   imageHeight?: string;
+  imagePosition?: string;
 }
 
 const ExperienceCard = ({
   nome,
   imagem,
   imageHeight = "h-64",
+  imagePosition = "",
 }: ExperienceCardProps) => (
   <Link
     href="/experiencias"
@@ -47,7 +49,7 @@ const ExperienceCard = ({
       src={imagem}
       alt={nome}
       fill
-      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+      className={`object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${imagePosition}`}
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
     <div className="absolute bottom-0 left-0 p-4 md:p-6">
@@ -93,6 +95,7 @@ export default function ExperienciasSection() {
               nome={MainExperience.nome}
               imagem={MainExperience.imagem}
               imageHeight="h-96"
+              imagePosition="object-[30%_center] md:object-center"
             />
           </div>
 
