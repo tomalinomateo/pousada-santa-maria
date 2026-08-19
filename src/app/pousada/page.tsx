@@ -53,7 +53,7 @@ export default function PousadaPage() {
       />
 
       {/* Description */}
-      <section className="mx-auto max-w-3xl px-6 pb-8 md:px-10 text-center">
+      <section className="mx-auto max-w-3xl px-6 pb-4 md:px-10 md:pb-8 text-center">
         <p
           className="text-base md:text-lg leading-relaxed"
           style={{ color: "var(--text)" }}
@@ -65,22 +65,25 @@ export default function PousadaPage() {
         </ReservarButton>
       </section>
 
-      {/* One very large photo */}
-      <section className="w-full px-0">
-        <div className="relative flex min-h-[80vh] w-full items-center justify-center" style={{ background: "var(--page-bg)" }}>
+      {/* One very large photo (no mobile ela tem o mesmo peso das demais) */}
+      <section className="w-full px-4 md:px-0">
+        <div
+          className="relative aspect-[4/3] w-full md:flex md:aspect-auto md:min-h-[80vh] md:items-center md:justify-center"
+          style={{ background: "var(--page-bg)" }}
+        >
           <Image
             src="/images/pousada/pousada_sunset.jpg"
             alt="Deck da pousada Santa Maria sobre o mar ao pôr do sol"
             fill
             priority
-            className="object-contain"
+            className="object-cover md:object-contain"
             sizes="100vw"
           />
         </div>
       </section>
 
       {/* Photos in rows of 3 - larger */}
-      <section className="mx-auto w-full max-w-7xl px-4 py-10 pb-12 md:pb-16 md:px-8">
+      <section className="mx-auto w-full max-w-7xl px-4 pt-5 pb-12 md:px-8 md:pt-10 md:pb-16">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {mediumPhotos.map((photo) => (
             <div
