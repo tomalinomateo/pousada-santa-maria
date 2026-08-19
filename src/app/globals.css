@@ -439,10 +439,40 @@ html[data-motion="on"] img[data-fade].is-loaded {
 }
 
 /* ============================================================
+   Hero: alto real de pantalla
+
+   En iOS, 100vh mide la pantalla completa, incluyendo la franja que tapan la
+   barra de direcciones y la barra inferior del navegador. El hero terminaba
+   más alto que el area visible y la señal de scroll quedaba escondida detrás
+   de la barra de abajo. `svh` es la altura visible más chica, con las barras
+   desplegadas: garantiza que nada del hero quede tapado, en Chrome y en
+   Safari. `vh` queda de respaldo para navegadores viejos.
+
+   Va sin breakpoint a proposito: en desktop no hay barras que se replieguen,
+   asi que svh y vh valen lo mismo y el hero sigue ocupando la pantalla entera,
+   igual que antes.
+   ============================================================ */
+.hero-viewport {
+  height: 100vh;
+  height: 100svh;
+}
+
+/* ============================================================
    Hero: señal de scroll
    ============================================================ */
 .scroll-cue {
   animation: scrollCue 2.4s var(--ease-soft) infinite;
+}
+
+/* Separa la señal del indicador de home del iPhone */
+.scroll-cue-anchor {
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 768px) {
+  .scroll-cue-anchor {
+    bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 @keyframes scrollCue {

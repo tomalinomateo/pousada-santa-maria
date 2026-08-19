@@ -13,8 +13,8 @@ export default function Home() {
     <main className="min-h-screen bg-white" style={{ background: BG_LIGHT }}>
       {/* Hero Section */}
       <section
-        className="relative w-full h-screen md:h-[81vh] -mt-16 md:mt-0 overflow-hidden"
-        style={{ minHeight: "100vh", margin: 0, padding: 0 }}
+        className="hero-viewport relative w-full overflow-hidden"
+        style={{ margin: 0, padding: 0 }}
       >
         <HeroVideo />
 
@@ -33,7 +33,7 @@ export default function Home() {
         {/* Señal de que la página sigue hacia abajo.
             El posicionamiento vive en el contenedor: la animación de entrada
             usa transform y pisaría el centrado del ancla. */}
-        <div className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2">
+        <div className="scroll-cue-anchor absolute left-1/2 -translate-x-1/2">
           <a
             href="#pousada"
             aria-label="Ver mais"
