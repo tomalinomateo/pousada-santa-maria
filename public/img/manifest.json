@@ -500,40 +500,6 @@
       ]
     },
     {
-      "id": "santamaria-157",
-      "alt": "",
-      "ancho": 7008,
-      "alto": 4672,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJbACdMoABem6tT29cNoAA/UP1n236s06o4p1+ec2RhIyETlL9hycy7EoUnL2Hmv7N8DfYeyEUV0HRCNahP1YLbzYk/mOMWL9e4OWQB5R9PbgA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-2/santamaria-157-400.avif",
-          "webp": "/img/cuarto-2/santamaria-157-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-2/santamaria-157-800.avif",
-          "webp": "/img/cuarto-2/santamaria-157-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-2/santamaria-157-1200.avif",
-          "webp": "/img/cuarto-2/santamaria-157-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-2/santamaria-157-1600.avif",
-          "webp": "/img/cuarto-2/santamaria-157-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-2/santamaria-157-2400.avif",
-          "webp": "/img/cuarto-2/santamaria-157-2400.webp"
-        }
-      ]
-    },
-    {
       "id": "santamaria-165",
       "alt": "",
       "ancho": 6865,
@@ -564,6 +530,25 @@
           "ancho": 2400,
           "avif": "/img/cuarto-2/santamaria-165-2400.avif",
           "webp": "/img/cuarto-2/santamaria-165-2400.webp"
+        }
+      ]
+    },
+    {
+      "id": "cuarto-2",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 768,
+      "placeholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQAgCdASoQAAwAA4BaJQBOgB6vWsZinpywAM4+C46suZdJsdixoZLWuFhO5a6arZLGeGi2/CjA/iAeKYmazkg/8HPcBX6EfVl1sX8IFlbd/qUkS0vzk0Ijw9nHfnDi6b2elYsJQt4AAA==",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-2/cuarto-2-400.avif",
+          "webp": "/img/cuarto-2/cuarto-2-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-2/cuarto-2-800.avif",
+          "webp": "/img/cuarto-2/cuarto-2-800.webp"
         }
       ]
     }
@@ -704,40 +689,6 @@
           "webp": "/img/cuarto-3/santamaria-151-2400.webp"
         }
       ]
-    },
-    {
-      "id": "santamaria-152",
-      "alt": "",
-      "ancho": 6912,
-      "alto": 4518,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQBACdASoUAA0APzmGuVOvKSWisAgB4CcJZgCdMoMsdEnwMJwOflrQ4h+AAP549HahwAbdoQvjwLtk4wOU6epYYHSxHjO7wks53OiwkfpGvToLuGN24nk8xDEORfcYoS1QZ4QfEQUSEAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-3/santamaria-152-400.avif",
-          "webp": "/img/cuarto-3/santamaria-152-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-3/santamaria-152-800.avif",
-          "webp": "/img/cuarto-3/santamaria-152-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-3/santamaria-152-1200.avif",
-          "webp": "/img/cuarto-3/santamaria-152-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-3/santamaria-152-1600.avif",
-          "webp": "/img/cuarto-3/santamaria-152-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-3/santamaria-152-2400.avif",
-          "webp": "/img/cuarto-3/santamaria-152-2400.webp"
-        }
-      ]
     }
   ],
   "cuarto-4": [
@@ -757,161 +708,6 @@
           "ancho": 800,
           "avif": "/img/cuarto-4/2b1e49f4-ab5e-4745-8e84-4e7d9f94472c-800.avif",
           "webp": "/img/cuarto-4/2b1e49f4-ab5e-4745-8e84-4e7d9f94472c-800.webp"
-        }
-      ]
-    },
-    {
-      "id": "d4707fea-f1bd-45fa-9ab0-f170793a2614-2",
-      "alt": "",
-      "ancho": 1086,
-      "alto": 1448,
-      "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAwBQCdASoUABsAPzmGvFavKCYjsBgIAeAnCWMAuwALbWZvudmftsBumTlOXooQHKezuAD6IQLRBWB3Q9yDduoIxxi8iaXl6/KvdITwOSTI2ID61E13mdRICsUmUik5uqIoym1L0E0HAYLPIKN9pUphy27wtb1yQ2QXlQGqmeevcDyye1qeB9bUGky41JV5NesbIM4KYB5shm0JjeAAAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/d4707fea-f1bd-45fa-9ab0-f170793a2614-2-400.avif",
-          "webp": "/img/cuarto-4/d4707fea-f1bd-45fa-9ab0-f170793a2614-2-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/d4707fea-f1bd-45fa-9ab0-f170793a2614-2-800.avif",
-          "webp": "/img/cuarto-4/d4707fea-f1bd-45fa-9ab0-f170793a2614-2-800.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-1",
-      "alt": "",
-      "ancho": 4608,
-      "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJYgCw7BECCSFVd+LAAP67T9gSJHc7y+ijVS3/VAnGhHhAvn8UwwuZ9F/kjnUffX4YV18+qljulPWHGKRyZ88CZa0xIjXTJc0EYeuiAAA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/santamaria-1-400.avif",
-          "webp": "/img/cuarto-4/santamaria-1-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/santamaria-1-800.avif",
-          "webp": "/img/cuarto-4/santamaria-1-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/santamaria-1-1200.avif",
-          "webp": "/img/cuarto-4/santamaria-1-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/santamaria-1-1600.avif",
-          "webp": "/img/cuarto-4/santamaria-1-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/santamaria-1-2400.avif",
-          "webp": "/img/cuarto-4/santamaria-1-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-24",
-      "alt": "",
-      "ancho": 4394,
-      "alto": 2622,
-      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAAwAPzmEuVOvKKWisAgB4CcJZACdAB4Q6x4dOg+3VvAA/o03qRvJuasklV+p22aXJekx5xStOGUBZxXm0qYwXKM6zrKAYya7yDcGLcy4lebCke4tweF0R20AAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/santamaria-24-400.avif",
-          "webp": "/img/cuarto-4/santamaria-24-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/santamaria-24-800.avif",
-          "webp": "/img/cuarto-4/santamaria-24-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/santamaria-24-1200.avif",
-          "webp": "/img/cuarto-4/santamaria-24-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/santamaria-24-1600.avif",
-          "webp": "/img/cuarto-4/santamaria-24-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/santamaria-24-2400.avif",
-          "webp": "/img/cuarto-4/santamaria-24-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-3",
-      "alt": "",
-      "ancho": 4608,
-      "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJQBOmUABWaNowJjzLYAD+y3VB6xuq8GVDuVuvPgjZ7BH1zDKaR72KGxTxj4kP/zUxLCMlwQCDHoSJY6bdTbFfK90Kh3LbSK5Us21ahiHdUAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/santamaria-3-400.avif",
-          "webp": "/img/cuarto-4/santamaria-3-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/santamaria-3-800.avif",
-          "webp": "/img/cuarto-4/santamaria-3-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/santamaria-3-1200.avif",
-          "webp": "/img/cuarto-4/santamaria-3-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/santamaria-3-1600.avif",
-          "webp": "/img/cuarto-4/santamaria-3-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/santamaria-3-2400.avif",
-          "webp": "/img/cuarto-4/santamaria-3-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-9",
-      "alt": "",
-      "ancho": 2620,
-      "alto": 3902,
-      "placeholder": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBQCdASoUAB4APzmGt1OvKSUisAgB4CcJZAC7MyGDUCXlD1hsofVUBoRy8wgylehNjutDtPQ8AAD+oXCUKkT+83QjIDZVDxm4d25e1uOFPGudXk37+sx5yWDvSBS2SAw54ZDP7LJw+0sA7GYRq5pu38HEUfTO6+kWU2GEnHz+Cx79rd5lbslNMwo3VaYMzKC8Qe7rCBORit3oRYFo010QI5I7NtQmjobowAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/santamaria-9-400.avif",
-          "webp": "/img/cuarto-4/santamaria-9-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/santamaria-9-800.avif",
-          "webp": "/img/cuarto-4/santamaria-9-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/santamaria-9-1200.avif",
-          "webp": "/img/cuarto-4/santamaria-9-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/santamaria-9-1600.avif",
-          "webp": "/img/cuarto-4/santamaria-9-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/santamaria-9-2400.avif",
-          "webp": "/img/cuarto-4/santamaria-9-2400.webp"
         }
       ]
     },
@@ -950,40 +746,6 @@
       ]
     },
     {
-      "id": "sm-14",
-      "alt": "",
-      "ancho": 4435,
-      "alto": 2774,
-      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAAwAPzmEuVOvKKWisAgB4CcJYgC2yCDK3UBfqfniXoAA/rv7frGKFs1I3f5/uCxAkFR5t8hwnoJhb9xwo4mUc3pJW2kjPppEFu9dAvhrC7oSEKE0ePiaYpwAAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/sm-14-400.avif",
-          "webp": "/img/cuarto-4/sm-14-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/sm-14-800.avif",
-          "webp": "/img/cuarto-4/sm-14-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/sm-14-1200.avif",
-          "webp": "/img/cuarto-4/sm-14-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/sm-14-1600.avif",
-          "webp": "/img/cuarto-4/sm-14-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/sm-14-2400.avif",
-          "webp": "/img/cuarto-4/sm-14-2400.webp"
-        }
-      ]
-    },
-    {
       "id": "sm-15",
       "alt": "",
       "ancho": 4604,
@@ -1014,74 +776,6 @@
           "ancho": 2400,
           "avif": "/img/cuarto-4/sm-15-2400.avif",
           "webp": "/img/cuarto-4/sm-15-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "sm-25",
-      "alt": "",
-      "ancho": 3072,
-      "alto": 4608,
-      "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASoUAB4APzmMu1WvKaYjMBgIAeAnCWQAqPQPoozJvxXH/K8e9k51rwfMKmAEAAD9kBGXeqrVvg4vnupRwMGt0qY2GLpV3EIoSZ9RMr79EYpMxAFrFpoIXoJuERRJ+v6o6uGjdWMKSA+n5K6L2Z9szCTjkjMIiYzmObugFOIAphB1IQFjgQT0Tfp1rAY3F88GsRw3/DRDjHE4sxcSg9y0AAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/sm-25-400.avif",
-          "webp": "/img/cuarto-4/sm-25-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/sm-25-800.avif",
-          "webp": "/img/cuarto-4/sm-25-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/sm-25-1200.avif",
-          "webp": "/img/cuarto-4/sm-25-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/sm-25-1600.avif",
-          "webp": "/img/cuarto-4/sm-25-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/sm-25-2400.avif",
-          "webp": "/img/cuarto-4/sm-25-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "sm-27",
-      "alt": "",
-      "ancho": 4608,
-      "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJQBOgBDeCvQTzb4WVgAD+RNfdTbaRmGKahOzAMQKPtGfQu6ygxo39lF+W4NOsQUOleWxVpEK7/tt4hx7ft8N4ZJASOSQaNAmIc1/+acHT4AAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-4/sm-27-400.avif",
-          "webp": "/img/cuarto-4/sm-27-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-4/sm-27-800.avif",
-          "webp": "/img/cuarto-4/sm-27-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-4/sm-27-1200.avif",
-          "webp": "/img/cuarto-4/sm-27-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-4/sm-27-1600.avif",
-          "webp": "/img/cuarto-4/sm-27-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-4/sm-27-2400.avif",
-          "webp": "/img/cuarto-4/sm-27-2400.webp"
         }
       ]
     },
@@ -1154,128 +848,109 @@
       ]
     },
     {
-      "id": "sm-36",
+      "id": "santamaria-1",
       "alt": "",
       "ancho": 4608,
       "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBACdASoUAA0APzmEuVOvKKWisAgB4CcJbACdMoACwZJ54XRtu0Q/5gAA/NbJmn8PgyldaIOBJQcN2T0LPo2D3VZfZQ6fdS+pLSdLEqInhkGNpFfj9uIpzTiFXfCAgY5xeUBNbxiPZrN61M6L6O6YLVSEAA==",
+      "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJYgCw7BECCSFVd+LAAP67T9gSJHc7y+ijVS3/VAnGhHhAvn8UwwuZ9F/kjnUffX4YV18+qljulPWHGKRyZ88CZa0xIjXTJc0EYeuiAAA=",
       "versiones": [
         {
           "ancho": 400,
-          "avif": "/img/cuarto-4/sm-36-400.avif",
-          "webp": "/img/cuarto-4/sm-36-400.webp"
+          "avif": "/img/cuarto-4/santamaria-1-400.avif",
+          "webp": "/img/cuarto-4/santamaria-1-400.webp"
         },
         {
           "ancho": 800,
-          "avif": "/img/cuarto-4/sm-36-800.avif",
-          "webp": "/img/cuarto-4/sm-36-800.webp"
+          "avif": "/img/cuarto-4/santamaria-1-800.avif",
+          "webp": "/img/cuarto-4/santamaria-1-800.webp"
         },
         {
           "ancho": 1200,
-          "avif": "/img/cuarto-4/sm-36-1200.avif",
-          "webp": "/img/cuarto-4/sm-36-1200.webp"
+          "avif": "/img/cuarto-4/santamaria-1-1200.avif",
+          "webp": "/img/cuarto-4/santamaria-1-1200.webp"
         },
         {
           "ancho": 1600,
-          "avif": "/img/cuarto-4/sm-36-1600.avif",
-          "webp": "/img/cuarto-4/sm-36-1600.webp"
+          "avif": "/img/cuarto-4/santamaria-1-1600.avif",
+          "webp": "/img/cuarto-4/santamaria-1-1600.webp"
         },
         {
           "ancho": 2400,
-          "avif": "/img/cuarto-4/sm-36-2400.avif",
-          "webp": "/img/cuarto-4/sm-36-2400.webp"
+          "avif": "/img/cuarto-4/santamaria-1-2400.avif",
+          "webp": "/img/cuarto-4/santamaria-1-2400.webp"
         }
       ]
     },
     {
-      "id": "sm-37",
+      "id": "santamaria-3",
       "alt": "",
       "ancho": 4608,
       "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAA0APzmGulQvKSWjMAgB4CcJagCdMoACTuCNKCNCYAAA99jprzMj3g+xJDpD6mTG8crBscCgnz8PcSIq8ToHJRbBWg6o3R2GiQRPq6Ro5J1jlhc1ytB4raAAAA==",
+      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJQBOmUABWaNowJjzLYAD+y3VB6xuq8GVDuVuvPgjZ7BH1zDKaR72KGxTxj4kP/zUxLCMlwQCDHoSJY6bdTbFfK90Kh3LbSK5Us21ahiHdUAAA",
       "versiones": [
         {
           "ancho": 400,
-          "avif": "/img/cuarto-4/sm-37-400.avif",
-          "webp": "/img/cuarto-4/sm-37-400.webp"
+          "avif": "/img/cuarto-4/santamaria-3-400.avif",
+          "webp": "/img/cuarto-4/santamaria-3-400.webp"
         },
         {
           "ancho": 800,
-          "avif": "/img/cuarto-4/sm-37-800.avif",
-          "webp": "/img/cuarto-4/sm-37-800.webp"
+          "avif": "/img/cuarto-4/santamaria-3-800.avif",
+          "webp": "/img/cuarto-4/santamaria-3-800.webp"
         },
         {
           "ancho": 1200,
-          "avif": "/img/cuarto-4/sm-37-1200.avif",
-          "webp": "/img/cuarto-4/sm-37-1200.webp"
+          "avif": "/img/cuarto-4/santamaria-3-1200.avif",
+          "webp": "/img/cuarto-4/santamaria-3-1200.webp"
         },
         {
           "ancho": 1600,
-          "avif": "/img/cuarto-4/sm-37-1600.avif",
-          "webp": "/img/cuarto-4/sm-37-1600.webp"
+          "avif": "/img/cuarto-4/santamaria-3-1600.avif",
+          "webp": "/img/cuarto-4/santamaria-3-1600.webp"
         },
         {
           "ancho": 2400,
-          "avif": "/img/cuarto-4/sm-37-2400.avif",
-          "webp": "/img/cuarto-4/sm-37-2400.webp"
+          "avif": "/img/cuarto-4/santamaria-3-2400.avif",
+          "webp": "/img/cuarto-4/santamaria-3-2400.webp"
         }
       ]
     },
     {
-      "id": "sm-5",
+      "id": "santamaria-9",
       "alt": "",
-      "ancho": 4240,
-      "alto": 2668,
-      "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoUAA0APzmGuVOvKSWisAgB4CcJbACdMoACXwUIv5KXdAAA+U04vxYjiLx6qB7VCSH/qIjJWGEXF0nDEL5Id+raeXo+r0ozjcSrdrzwSrgkEWzHYhDXyNADmGP4/lZqJhLp3rmbWDnln9bkAAA=",
+      "ancho": 2620,
+      "alto": 3902,
+      "placeholder": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBQCdASoUAB4APzmGt1OvKSUisAgB4CcJZAC7MyGDUCXlD1hsofVUBoRy8wgylehNjutDtPQ8AAD+oXCUKkT+83QjIDZVDxm4d25e1uOFPGudXk37+sx5yWDvSBS2SAw54ZDP7LJw+0sA7GYRq5pu38HEUfTO6+kWU2GEnHz+Cx79rd5lbslNMwo3VaYMzKC8Qe7rCBORit3oRYFo010QI5I7NtQmjobowAAA",
       "versiones": [
         {
           "ancho": 400,
-          "avif": "/img/cuarto-4/sm-5-400.avif",
-          "webp": "/img/cuarto-4/sm-5-400.webp"
+          "avif": "/img/cuarto-4/santamaria-9-400.avif",
+          "webp": "/img/cuarto-4/santamaria-9-400.webp"
         },
         {
           "ancho": 800,
-          "avif": "/img/cuarto-4/sm-5-800.avif",
-          "webp": "/img/cuarto-4/sm-5-800.webp"
+          "avif": "/img/cuarto-4/santamaria-9-800.avif",
+          "webp": "/img/cuarto-4/santamaria-9-800.webp"
         },
         {
           "ancho": 1200,
-          "avif": "/img/cuarto-4/sm-5-1200.avif",
-          "webp": "/img/cuarto-4/sm-5-1200.webp"
+          "avif": "/img/cuarto-4/santamaria-9-1200.avif",
+          "webp": "/img/cuarto-4/santamaria-9-1200.webp"
         },
         {
           "ancho": 1600,
-          "avif": "/img/cuarto-4/sm-5-1600.avif",
-          "webp": "/img/cuarto-4/sm-5-1600.webp"
+          "avif": "/img/cuarto-4/santamaria-9-1600.avif",
+          "webp": "/img/cuarto-4/santamaria-9-1600.webp"
         },
         {
           "ancho": 2400,
-          "avif": "/img/cuarto-4/sm-5-2400.avif",
-          "webp": "/img/cuarto-4/sm-5-2400.webp"
+          "avif": "/img/cuarto-4/santamaria-9-2400.avif",
+          "webp": "/img/cuarto-4/santamaria-9-2400.webp"
         }
       ]
     }
   ],
   "cuarto-5": [
-    {
-      "id": "2b1e49f4-ab5e-4745-8e84-4e7d9f94472c",
-      "alt": "",
-      "ancho": 1086,
-      "alto": 1448,
-      "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACQBQCdASoUABsAPzmQu1WvKiYjMBgIAeAnCWYAnTNMxk4zOH7LL4b2abVAy2b9gcJLVv1UAAD9sE+IjE+JzDYbV5MsNUuNoW7xAE5ATDi80N46JMBGjGe0tF2zHbM2SXQ9YlgFWHxmDz1250s2SGkcorOM6N+TlV0SYahTTMJ8CEZeHQJ7xuCcuWHzj//N99iKlNZghLI8IMLNqSG76Fxv+lpdjmMM+xd0kSvjZFrhCzFW9dIxhS4/WgA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/2b1e49f4-ab5e-4745-8e84-4e7d9f94472c-400.avif",
-          "webp": "/img/cuarto-5/2b1e49f4-ab5e-4745-8e84-4e7d9f94472c-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/2b1e49f4-ab5e-4745-8e84-4e7d9f94472c-800.avif",
-          "webp": "/img/cuarto-5/2b1e49f4-ab5e-4745-8e84-4e7d9f94472c-800.webp"
-        }
-      ]
-    },
     {
       "id": "d4707fea-f1bd-45fa-9ab0-f170793a2614-2",
       "alt": "",
@@ -1292,176 +967,6 @@
           "ancho": 800,
           "avif": "/img/cuarto-5/d4707fea-f1bd-45fa-9ab0-f170793a2614-2-800.avif",
           "webp": "/img/cuarto-5/d4707fea-f1bd-45fa-9ab0-f170793a2614-2-800.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-1",
-      "alt": "",
-      "ancho": 4608,
-      "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJYgCw7BECCSFVd+LAAP67T9gSJHc7y+ijVS3/VAnGhHhAvn8UwwuZ9F/kjnUffX4YV18+qljulPWHGKRyZ88CZa0xIjXTJc0EYeuiAAA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/santamaria-1-400.avif",
-          "webp": "/img/cuarto-5/santamaria-1-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/santamaria-1-800.avif",
-          "webp": "/img/cuarto-5/santamaria-1-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/santamaria-1-1200.avif",
-          "webp": "/img/cuarto-5/santamaria-1-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/santamaria-1-1600.avif",
-          "webp": "/img/cuarto-5/santamaria-1-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/santamaria-1-2400.avif",
-          "webp": "/img/cuarto-5/santamaria-1-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-24",
-      "alt": "",
-      "ancho": 4394,
-      "alto": 2622,
-      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAAwAPzmEuVOvKKWisAgB4CcJZACdAB4Q6x4dOg+3VvAA/o03qRvJuasklV+p22aXJekx5xStOGUBZxXm0qYwXKM6zrKAYya7yDcGLcy4lebCke4tweF0R20AAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/santamaria-24-400.avif",
-          "webp": "/img/cuarto-5/santamaria-24-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/santamaria-24-800.avif",
-          "webp": "/img/cuarto-5/santamaria-24-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/santamaria-24-1200.avif",
-          "webp": "/img/cuarto-5/santamaria-24-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/santamaria-24-1600.avif",
-          "webp": "/img/cuarto-5/santamaria-24-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/santamaria-24-2400.avif",
-          "webp": "/img/cuarto-5/santamaria-24-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-3",
-      "alt": "",
-      "ancho": 4608,
-      "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJQBOmUABWaNowJjzLYAD+y3VB6xuq8GVDuVuvPgjZ7BH1zDKaR72KGxTxj4kP/zUxLCMlwQCDHoSJY6bdTbFfK90Kh3LbSK5Us21ahiHdUAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/santamaria-3-400.avif",
-          "webp": "/img/cuarto-5/santamaria-3-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/santamaria-3-800.avif",
-          "webp": "/img/cuarto-5/santamaria-3-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/santamaria-3-1200.avif",
-          "webp": "/img/cuarto-5/santamaria-3-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/santamaria-3-1600.avif",
-          "webp": "/img/cuarto-5/santamaria-3-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/santamaria-3-2400.avif",
-          "webp": "/img/cuarto-5/santamaria-3-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "santamaria-9",
-      "alt": "",
-      "ancho": 2620,
-      "alto": 3902,
-      "placeholder": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBQCdASoUAB4APzmGt1OvKSUisAgB4CcJZAC7MyGDUCXlD1hsofVUBoRy8wgylehNjutDtPQ8AAD+oXCUKkT+83QjIDZVDxm4d25e1uOFPGudXk37+sx5yWDvSBS2SAw54ZDP7LJw+0sA7GYRq5pu38HEUfTO6+kWU2GEnHz+Cx79rd5lbslNMwo3VaYMzKC8Qe7rCBORit3oRYFo010QI5I7NtQmjobowAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/santamaria-9-400.avif",
-          "webp": "/img/cuarto-5/santamaria-9-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/santamaria-9-800.avif",
-          "webp": "/img/cuarto-5/santamaria-9-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/santamaria-9-1200.avif",
-          "webp": "/img/cuarto-5/santamaria-9-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/santamaria-9-1600.avif",
-          "webp": "/img/cuarto-5/santamaria-9-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/santamaria-9-2400.avif",
-          "webp": "/img/cuarto-5/santamaria-9-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "sm-10",
-      "alt": "",
-      "ancho": 4552,
-      "alto": 2936,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoUAA0APzmGuVOvKSWisAgB4CcJbAC06BjuMdLot836LwAA4g7bzmaBCCy+GVMyhLj+OJnQuuwQ55psX39UYM4EjXrTpbBmOKf7+HjSYkJt4wH8JPlFXhVT0M03EDBPUTTAAAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/sm-10-400.avif",
-          "webp": "/img/cuarto-5/sm-10-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/sm-10-800.avif",
-          "webp": "/img/cuarto-5/sm-10-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/sm-10-1200.avif",
-          "webp": "/img/cuarto-5/sm-10-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/sm-10-1600.avif",
-          "webp": "/img/cuarto-5/sm-10-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/sm-10-2400.avif",
-          "webp": "/img/cuarto-5/sm-10-2400.webp"
         }
       ]
     },
@@ -1500,40 +1005,6 @@
       ]
     },
     {
-      "id": "sm-15",
-      "alt": "",
-      "ancho": 4604,
-      "alto": 2884,
-      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACQAwCdASoUAA0APzmGulOvKKWisAgB4CcJQBOgA1N+r7IqHBoAAP4jUvM2yLz+lguqBiiHUQVlRWpBpzds8hUe6btbqEjmXEOQ8Sqto9oiESXBfASUsq4smarMsfmNVdvAAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/sm-15-400.avif",
-          "webp": "/img/cuarto-5/sm-15-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/sm-15-800.avif",
-          "webp": "/img/cuarto-5/sm-15-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/sm-15-1200.avif",
-          "webp": "/img/cuarto-5/sm-15-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/sm-15-1600.avif",
-          "webp": "/img/cuarto-5/sm-15-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/sm-15-2400.avif",
-          "webp": "/img/cuarto-5/sm-15-2400.webp"
-        }
-      ]
-    },
-    {
       "id": "sm-25",
       "alt": "",
       "ancho": 3072,
@@ -1564,108 +1035,6 @@
           "ancho": 2400,
           "avif": "/img/cuarto-5/sm-25-2400.avif",
           "webp": "/img/cuarto-5/sm-25-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "sm-27",
-      "alt": "",
-      "ancho": 4608,
-      "alto": 3072,
-      "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJQBOgBDeCvQTzb4WVgAD+RNfdTbaRmGKahOzAMQKPtGfQu6ygxo39lF+W4NOsQUOleWxVpEK7/tt4hx7ft8N4ZJASOSQaNAmIc1/+acHT4AAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/sm-27-400.avif",
-          "webp": "/img/cuarto-5/sm-27-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/sm-27-800.avif",
-          "webp": "/img/cuarto-5/sm-27-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/sm-27-1200.avif",
-          "webp": "/img/cuarto-5/sm-27-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/sm-27-1600.avif",
-          "webp": "/img/cuarto-5/sm-27-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/sm-27-2400.avif",
-          "webp": "/img/cuarto-5/sm-27-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "sm-28",
-      "alt": "",
-      "ancho": 2412,
-      "alto": 3817,
-      "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABQBQCdASoUACAAPzmKulOvKaWisAgB4CcJZADDNA8R4Zy6o5JHnuHd/o0ToPZ5t7woYUAA+4FrSTN5nrqphU8qxu8Q+S7HOrrlWDqzUHKd//Rbx0zIxtmZXhs7A7zMNF7ldnSGHUT02StoZsjMk0zh66Xyqe0FAu0eR5EXJSjHq94wf1HSMVhCLaDirWukmQnz/u0tci1sVdecmYAxcPPn+HnMJ6iW2vHfUyCRJDanw6eEZIIv/uxGAAA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/sm-28-400.avif",
-          "webp": "/img/cuarto-5/sm-28-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/sm-28-800.avif",
-          "webp": "/img/cuarto-5/sm-28-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/sm-28-1200.avif",
-          "webp": "/img/cuarto-5/sm-28-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/sm-28-1600.avif",
-          "webp": "/img/cuarto-5/sm-28-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/sm-28-2400.avif",
-          "webp": "/img/cuarto-5/sm-28-2400.webp"
-        }
-      ]
-    },
-    {
-      "id": "sm-33",
-      "alt": "",
-      "ancho": 4294,
-      "alto": 2814,
-      "placeholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoUAA0APzmGuVOvKSWisAgB4CcJagCdMoACPZ+h4EusOY6ThAD+r4GautccSxkIu4JKAiI1KDc4gmzSj5g5qETPh/XJ5HYCGe5FcEpaVjP3P2osvE3at0cwoelB3FxoM0MAAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-5/sm-33-400.avif",
-          "webp": "/img/cuarto-5/sm-33-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-5/sm-33-800.avif",
-          "webp": "/img/cuarto-5/sm-33-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-5/sm-33-1200.avif",
-          "webp": "/img/cuarto-5/sm-33-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-5/sm-33-1600.avif",
-          "webp": "/img/cuarto-5/sm-33-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-5/sm-33-2400.avif",
-          "webp": "/img/cuarto-5/sm-33-2400.webp"
         }
       ]
     },
@@ -1768,6 +1137,40 @@
           "ancho": 2400,
           "avif": "/img/cuarto-5/sm-5-2400.avif",
           "webp": "/img/cuarto-5/sm-5-2400.webp"
+        }
+      ]
+    },
+    {
+      "id": "santamaria-24",
+      "alt": "",
+      "ancho": 4394,
+      "alto": 2622,
+      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAAwAPzmEuVOvKKWisAgB4CcJZACdAB4Q6x4dOg+3VvAA/o03qRvJuasklV+p22aXJekx5xStOGUBZxXm0qYwXKM6zrKAYya7yDcGLcy4lebCke4tweF0R20AAA==",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-5/santamaria-24-400.avif",
+          "webp": "/img/cuarto-5/santamaria-24-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-5/santamaria-24-800.avif",
+          "webp": "/img/cuarto-5/santamaria-24-800.webp"
+        },
+        {
+          "ancho": 1200,
+          "avif": "/img/cuarto-5/santamaria-24-1200.avif",
+          "webp": "/img/cuarto-5/santamaria-24-1200.webp"
+        },
+        {
+          "ancho": 1600,
+          "avif": "/img/cuarto-5/santamaria-24-1600.avif",
+          "webp": "/img/cuarto-5/santamaria-24-1600.webp"
+        },
+        {
+          "ancho": 2400,
+          "avif": "/img/cuarto-5/santamaria-24-2400.avif",
+          "webp": "/img/cuarto-5/santamaria-24-2400.webp"
         }
       ]
     }
@@ -2192,6 +1595,242 @@
           "ancho": 2400,
           "avif": "/img/cuarto-7/santamaria-80-2400.avif",
           "webp": "/img/cuarto-7/santamaria-80-2400.webp"
+        }
+      ]
+    }
+  ],
+  "cuarto-8": [
+    {
+      "id": "680873589",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 621,
+      "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAoAA4BaJaACdAECmV32b1LgAP7kZ2myzrU1jTuQHeUefFGYJIkyh4gGFFUnc0r92bdMKG3WKT7872MSGzv1fub+CIm+RzT1iL20RtoiGs4AAAA=",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/680873589-400.avif",
+          "webp": "/img/cuarto-8/680873589-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/680873589-800.avif",
+          "webp": "/img/cuarto-8/680873589-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385779",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 641,
+      "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAQCdASoQAAoAA4BaJZQAAUikqBoAAP7I8vx2WjMfTfXJs4ATSq0lTB8K7MMzNDdPIqhNA+866y2CDfCHgcAKiihRE8Qd9QBBOdUrdam4Bo+l+AAAAA==",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385779-400.avif",
+          "webp": "/img/cuarto-8/693385779-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385779-800.avif",
+          "webp": "/img/cuarto-8/693385779-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385791",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 668,
+      "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAoAA4BaJQBOgCPLz74NyFAA/vClqDLYjcWS8PeDhftTkfnkpGMlvKk7rn2PU+3ro52VFHoFeFmApd67yJdO5PP6OqJAAAA=",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385791-400.avif",
+          "webp": "/img/cuarto-8/693385791-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385791-800.avif",
+          "webp": "/img/cuarto-8/693385791-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385792",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 653,
+      "placeholder": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAoAA4BaJZQCdADDzW8emAAA/tIW7r4wrZ+d7E9PXaHmYN6CHBUo4tExqN1hMwY6ZgJkt3HUWDA38O2KEovlGmIAAA==",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385792-400.avif",
+          "webp": "/img/cuarto-8/693385792-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385792-800.avif",
+          "webp": "/img/cuarto-8/693385792-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385825",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 644,
+      "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQAAoAA4BaJZQCdADhg+NCqK0AAP6Hy4beumE2MMNydI9b8RPIxO3m9YXbju8l9Q2SnDtVzfpjdr2+QMIi4f5Y0H+PJUmAAAA=",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385825-400.avif",
+          "webp": "/img/cuarto-8/693385825-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385825-800.avif",
+          "webp": "/img/cuarto-8/693385825-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385829",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 665,
+      "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAoAA4BaJZQCdACC2MIAAPa94x5nYK+LxJbpD4eeaUHC1tCughzNipiodFMxz3YC8Be/Y48SzlTVSNgjvvoy9CT8wtCoAAA=",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385829-400.avif",
+          "webp": "/img/cuarto-8/693385829-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385829-800.avif",
+          "webp": "/img/cuarto-8/693385829-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385833",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 670,
+      "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAoAA4BaJbACdADxC9p8XYAA+xpzY0KrL6dBUFyKCoKK5R9Pr8BgA3i1bbYTWAIfC2u2Ip4dLs8gTdPLxLHQkQp34AIAAAA=",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385833-400.avif",
+          "webp": "/img/cuarto-8/693385833-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385833-800.avif",
+          "webp": "/img/cuarto-8/693385833-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385840",
+      "alt": "",
+      "ancho": 465,
+      "alto": 768,
+      "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoQABoAPu1oqk6ppiQiMAgBMB2JaACdOUACef/u/8y7xtWaxAAA/rfK5Vclp9ccIgEqLz12HY2Zr+XI7o+Hzcx6B5T1ougv/R8BnhFUtBSGMC9trFK6fzyDagQekBPt7v4a3ySXnWnBu+nfDfQg5mo6QhvJZJyEy/8vuOyb7dTWNcysAAA=",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385840-400.avif",
+          "webp": "/img/cuarto-8/693385840-400.webp"
+        }
+      ]
+    },
+    {
+      "id": "693385845",
+      "alt": "",
+      "ancho": 1024,
+      "alto": 690,
+      "placeholder": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAsAA4BaJaACdADw0r9UpJgAAPznoy3cgqpG7/TqPK6rH1a+sRQ6qbhhH2/awj0fyigpBjByKOrJFqkyOQdspRAAAA==",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/693385845-400.avif",
+          "webp": "/img/cuarto-8/693385845-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/693385845-800.avif",
+          "webp": "/img/cuarto-8/693385845-800.webp"
+        }
+      ]
+    },
+    {
+      "id": "santamaria-89",
+      "alt": "",
+      "ancho": 4589,
+      "alto": 2783,
+      "placeholder": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAoAA4BaJaACdAECmfj+wUrKwAD+5GFAcs61NY07kGka1JfMc0g0M8Tvk5CQpk6ZImzRUxKvajkQvoV3lXulES9muN2QnXba6YJb1kULvdf5fAAAAA==",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/santamaria-89-400.avif",
+          "webp": "/img/cuarto-8/santamaria-89-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/santamaria-89-800.avif",
+          "webp": "/img/cuarto-8/santamaria-89-800.webp"
+        },
+        {
+          "ancho": 1200,
+          "avif": "/img/cuarto-8/santamaria-89-1200.avif",
+          "webp": "/img/cuarto-8/santamaria-89-1200.webp"
+        },
+        {
+          "ancho": 1600,
+          "avif": "/img/cuarto-8/santamaria-89-1600.avif",
+          "webp": "/img/cuarto-8/santamaria-89-1600.webp"
+        },
+        {
+          "ancho": 2000,
+          "avif": "/img/cuarto-8/santamaria-89-2000.avif",
+          "webp": "/img/cuarto-8/santamaria-89-2000.webp"
+        }
+      ]
+    },
+    {
+      "id": "santamaria-95",
+      "alt": "",
+      "ancho": 4608,
+      "alto": 2890,
+      "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwAgCdASoQAAoAA4BaJYgCdB2gAkDVSAZeAADN8ewWDoGBhoAQGYFWLOW6IhF+RevrnFKGIQ5AIpBLq63LqB//lMsqUlqqhU+kw5eb7OUCkbDdWCg0toAA",
+      "versiones": [
+        {
+          "ancho": 400,
+          "avif": "/img/cuarto-8/santamaria-95-400.avif",
+          "webp": "/img/cuarto-8/santamaria-95-400.webp"
+        },
+        {
+          "ancho": 800,
+          "avif": "/img/cuarto-8/santamaria-95-800.avif",
+          "webp": "/img/cuarto-8/santamaria-95-800.webp"
+        },
+        {
+          "ancho": 1200,
+          "avif": "/img/cuarto-8/santamaria-95-1200.avif",
+          "webp": "/img/cuarto-8/santamaria-95-1200.webp"
+        },
+        {
+          "ancho": 1600,
+          "avif": "/img/cuarto-8/santamaria-95-1600.avif",
+          "webp": "/img/cuarto-8/santamaria-95-1600.webp"
+        },
+        {
+          "ancho": 2000,
+          "avif": "/img/cuarto-8/santamaria-95-2000.avif",
+          "webp": "/img/cuarto-8/santamaria-95-2000.webp"
         }
       ]
     }
