@@ -13,7 +13,7 @@ type ReservarButtonProps = {
 };
 
 const baseClass =
-  "inline-flex items-center justify-center gap-2 px-8 py-3 rounded-none font-bold uppercase tracking-wide text-white shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-500 ease-out";
+  "btn-motion inline-flex items-center justify-center gap-2 px-8 py-3 rounded-none font-bold uppercase tracking-wide text-white shadow-lg";
 
 export default function ReservarButton({
   roomName,

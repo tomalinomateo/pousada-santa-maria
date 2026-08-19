@@ -40,6 +40,9 @@ const mediumPhotos: { src: string; alt: string; position?: string }[] = [
   },
 ];
 
+// De a tres por fila: el escalonado se reinicia en cada fila.
+const REVEAL_STAGGER = ["", "reveal-d1", "reveal-d2"];
+
 export default function PousadaPage() {
   return (
     <main
@@ -55,12 +58,12 @@ export default function PousadaPage() {
       {/* Description */}
       <section className="mx-auto max-w-3xl px-6 pb-4 md:px-10 md:pb-8 text-center">
         <p
-          className="text-base md:text-lg leading-relaxed"
+          className="enter enter-d4 text-base md:text-lg leading-relaxed"
           style={{ color: "var(--text)" }}
         >
           A Santa Maria foi pensada para quem quer viver Atins com calma e conforto. Quartos acolhedores, banho gostoso, luz natural e uma atmosfera tranquila convidam ao descanso. Pela manhã, o café da manhã bem servido completa a experiência.
         </p>
-        <ReservarButton className="mt-8 bg-[#D6B24C] text-[#1C140D] hover:bg-[#e0c065]">
+        <ReservarButton className="enter enter-d5 mt-8 bg-[#D6B24C] text-[#1C140D] hover:bg-[#e0c065]">
           Reservar agora
         </ReservarButton>
       </section>
@@ -70,6 +73,7 @@ export default function PousadaPage() {
         <div
           className="relative aspect-[4/3] w-full md:flex md:aspect-auto md:min-h-[80vh] md:items-center md:justify-center"
           style={{ background: "var(--page-bg)" }}
+          data-reveal="zoom"
         >
           <Image
             src="/images/pousada/pousada_sunset.jpg"
@@ -77,6 +81,7 @@ export default function PousadaPage() {
             fill
             priority
             className="object-cover md:object-contain"
+            data-fade
             sizes="100vw"
           />
         </div>
@@ -85,16 +90,21 @@ export default function PousadaPage() {
       {/* Photos in rows of 3 - larger */}
       <section className="mx-auto w-full max-w-7xl px-4 pt-5 pb-12 md:px-8 md:pt-10 md:pb-16">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-          {mediumPhotos.map((photo) => (
+          {mediumPhotos.map((photo, i) => (
             <div
               key={photo.src}
-              className="relative aspect-[4/3] w-full overflow-hidden rounded-none"
+              /* De a tres por fila: el escalonado se reinicia en cada fila */
+              className={`relative aspect-[4/3] w-full overflow-hidden rounded-none ${
+                REVEAL_STAGGER[i % REVEAL_STAGGER.length]
+              }`}
+              data-reveal="up"
             >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 className="object-cover"
+                data-fade
                 style={{ objectPosition: photo.position ?? "center" }}
                 sizes="(max-width: 768px) 100vw, 33vw"
               />

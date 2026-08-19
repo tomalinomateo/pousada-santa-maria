@@ -71,6 +71,9 @@ const EXPERIENCE_CARDS = [
   },
 ] as const;
 
+// Grilla de dos columnas: el escalonado alterna entre par e impar.
+const REVEAL_STAGGER = ["", "reveal-d1"];
+
 export default function ExperienciasPage() {
   return (
     <main className="min-h-screen" style={{ background: "var(--page-bg)" }}>
@@ -83,10 +86,13 @@ export default function ExperienciasPage() {
       {/* Cards grid */}
       <section className="px-4 md:px-8 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {EXPERIENCE_CARDS.map((card) => (
+          {EXPERIENCE_CARDS.map((card, i) => (
             <article
               key={card.slug}
-              className="bg-white rounded-none shadow-md overflow-hidden flex flex-col"
+              className={`bg-white rounded-none shadow-md overflow-hidden flex flex-col ${
+                REVEAL_STAGGER[i % REVEAL_STAGGER.length]
+              }`}
+              data-reveal="up"
             >
               <div className="relative w-full aspect-[4/3] overflow-hidden">
                 <Image
@@ -94,6 +100,7 @@ export default function ExperienciasPage() {
                   alt={card.title}
                   fill
                   className="object-cover"
+                  data-fade
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
@@ -114,12 +121,12 @@ export default function ExperienciasPage() {
             </article>
           ))}
         </div>
-        <div className="max-w-5xl mx-auto mt-12 text-center">
+        <div className="max-w-5xl mx-auto mt-12 text-center" data-reveal="up">
           <a
             href={getWhatsAppUrlWithMessage("Olá! Quero reservar uma experiência em Atins com vocês.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-none font-semibold shadow hover:opacity-90 transition-all duration-500 ease-out uppercase"
+            className="btn-motion inline-flex items-center justify-center gap-2 px-8 py-3 rounded-none font-semibold shadow uppercase"
             style={{
               background: "var(--accent)",
               color: "var(--button-text)",

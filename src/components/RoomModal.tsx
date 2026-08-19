@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { FaTimes, FaUsers } from "react-icons/fa";
 import type { Quarto } from "@/data/quartos";
@@ -12,55 +12,92 @@ type RoomModalProps = {
   onClose: () => void;
 };
 
+// Tiene que coincidir con la duración de la transición de salida, si no el
+// modal se desmonta antes de terminar de irse.
+const EXIT_MS = 320;
+
 export default function RoomModal({ quarto, onClose }: RoomModalProps) {
   const [visible, setVisible] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocused = useRef<HTMLElement | null>(null);
+  const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleClose = useCallback(() => {
+    setVisible(false);
+    if (exitTimer.current) clearTimeout(exitTimer.current);
+    exitTimer.current = setTimeout(onClose, EXIT_MS);
+  }, [onClose]);
+
+  // El efecto sólo debe correr al abrir o cerrar, no cada vez que el padre
+  // vuelve a renderizar y cambia la identidad de onClose.
+  const closeRef = useRef(handleClose);
+  closeRef.current = handleClose;
 
   useEffect(() => {
     if (!quarto) return;
-    setVisible(true);
+
+    // Dos cuadros de espera: el primero pinta el estado cerrado, el segundo
+    // dispara la transición. Sin esto el navegador ve un único cambio y el
+    // modal aparece de golpe.
+    const frame = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setVisible(true))
+    );
+
+    previouslyFocused.current = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
 
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") handleClose();
+      if (e.key === "Escape") closeRef.current();
     };
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleEscape);
+
     return () => {
+      cancelAnimationFrame(frame);
       document.body.style.overflow = "";
       document.removeEventListener("keydown", handleEscape);
+      // Devolvemos el foco a la tarjeta que abrió el modal.
+      previouslyFocused.current?.focus();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quarto]);
+
+  useEffect(
+    () => () => {
+      if (exitTimer.current) clearTimeout(exitTimer.current);
+    },
+    []
+  );
 
   if (!quarto) return null;
 
-  const handleClose = () => {
-    setVisible(false);
-    setTimeout(() => {
-      onClose();
-    }, 200);
-  };
-
   const modalContent = (
     <div
-      className={`fixed inset-0 z-[200] bg-black/70 backdrop-blur-sm transition-opacity duration-500 ease-out ${
-        visible ? "opacity-100" : "opacity-0"
-      }`}
+      className="fixed inset-0 z-[200] bg-black/70 backdrop-blur-sm"
+      style={{
+        opacity: visible ? 1 : 0,
+        transition: `opacity ${EXIT_MS}ms var(--ease-soft)`,
+      }}
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
       aria-label={`Detalhes: ${quarto.nome}`}
     >
       <div
-        className={`absolute inset-[2.5%] overflow-y-auto transition-transform duration-500 ease-out ${
-          visible ? "scale-100 translate-y-0" : "scale-95 translate-y-2"
-        }`}
-        style={{ background: "var(--card-bg)" }}
+        className="absolute inset-[2.5%] overflow-y-auto"
+        style={{
+          background: "var(--card-bg)",
+          opacity: visible ? 1 : 0,
+          scale: visible ? "1" : "0.96",
+          translate: visible ? "none" : "0 12px",
+          transition: `opacity ${EXIT_MS}ms var(--ease-soft), scale ${EXIT_MS}ms var(--ease-soft), translate ${EXIT_MS}ms var(--ease-soft)`,
+        }}
         onClick={(e) => e.stopPropagation()}
       >
         <button
+          ref={closeButtonRef}
           type="button"
           onClick={handleClose}
-          className="fixed top-4 right-4 z-[210] flex items-center justify-center w-10 h-10 rounded-full border-2 shadow-lg transition-all duration-500 ease-out hover:scale-105"
+          className="btn-motion fixed top-4 right-4 z-[210] flex items-center justify-center w-10 h-10 rounded-full border-2 shadow-lg"
           style={{
             background: "var(--page-bg)",
             borderColor: "var(--accent)",

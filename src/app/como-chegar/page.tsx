@@ -23,7 +23,7 @@ export default function ComoChegarPage() {
       {/* Content */}
       <section className="px-4 md:px-8 pb-12 md:pb-16 w-full max-w-4xl mx-auto">
         <p
-          className="text-center max-w-2xl mx-auto mb-4 text-lg normal-case"
+          className="enter enter-d4 text-center max-w-2xl mx-auto mb-4 text-lg normal-case"
           style={{ color: "var(--text)" }}
         >
           Atins é um charmoso vilarejo à beira-mar. Dunas, lagoas cristalinas e
@@ -31,7 +31,7 @@ export default function ComoChegarPage() {
           tranquilidade e paisagens paradisíacas.
         </p>
         <p
-          className="text-center max-w-2xl mx-auto mb-10 text-lg normal-case"
+          className="enter enter-d5 text-center max-w-2xl mx-auto mb-10 text-lg normal-case"
           style={{ color: "var(--text)" }}
         >
           Além de visitar os Lençóis, é possível fazer passeios de barco pelo rio
@@ -39,7 +39,10 @@ export default function ComoChegarPage() {
           de frente para o mar, a cerca de 10 minutos a pé do centrinho de Atins.
         </p>
 
-        <div className="relative w-full overflow-hidden rounded-xl shadow-xl border border-white/20 min-h-[450px]">
+        <div
+          className="relative w-full overflow-hidden rounded-xl shadow-xl border border-white/20 min-h-[450px]"
+          data-reveal="up"
+        >
           {!mapLoaded && (
             <div
               className="absolute inset-0 flex items-center justify-center bg-[var(--section-bg)] z-10"
@@ -57,7 +60,7 @@ export default function ComoChegarPage() {
             style={{
               border: 0,
               opacity: mapLoaded ? 1 : 0,
-              transition: "opacity 0.3s ease-out",
+              transition: "opacity var(--dur-reveal) var(--ease-soft)",
             }}
             allowFullScreen
             loading="lazy"
@@ -67,12 +70,12 @@ export default function ComoChegarPage() {
           />
         </div>
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8" data-reveal="up">
           <a
             href="https://www.google.com/maps/search/posada+santa+maria+atins"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 rounded-none font-semibold shadow hover:opacity-90 transition-all duration-500 ease-out uppercase"
+            className="btn-motion inline-block px-6 py-3 rounded-none font-semibold shadow uppercase"
             style={{
               background: "var(--accent)",
               color: "var(--button-text)",

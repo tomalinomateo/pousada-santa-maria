@@ -17,8 +17,8 @@ export default function ReservarSection() {
     >
       {/* Fondo decorativo */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-yellow-300"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-yellow-500"></div>
+        <div className="drift absolute bottom-20 right-20 w-24 h-24 rounded-full bg-yellow-300"></div>
+        <div className="drift-slow absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-yellow-500"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
@@ -26,10 +26,14 @@ export default function ReservarSection() {
           <h2
             className="text-3xl md:text-5xl font-bold mb-6 tracking-wider uppercase"
             style={{ color: GOLD }}
+            data-reveal="up"
           >
             Reserve Sua Estadia
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90">
+          <p
+            className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 reveal-d1"
+            data-reveal="up"
+          >
             Descubra a magia dos Lençóis Maranhenses com conforto e
             exclusividade. Sua aventura inesquecível começa aqui.
           </p>
@@ -38,8 +42,11 @@ export default function ReservarSection() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Lado izquierdo - Información */}
           <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              data-reveal="group"
+            >
+              <div className="reveal-child bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaCalendarAlt className="text-2xl" style={{ color: GOLD }} />
                   <h3 className="font-bold text-lg">Reserva Fácil</h3>
@@ -49,7 +56,7 @@ export default function ReservarSection() {
                 </p>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
+              <div className="reveal-child reveal-d1 bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaMapMarkerAlt
                     className="text-2xl"
@@ -65,7 +72,7 @@ export default function ReservarSection() {
                 </p>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
+              <div className="reveal-child reveal-d2 bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaStar className="text-2xl" style={{ color: GOLD }} />
                   <h3 className="font-bold text-lg">Experiência Única</h3>
@@ -76,7 +83,7 @@ export default function ReservarSection() {
                 </p>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
+              <div className="reveal-child reveal-d3 bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
                   <FaHeart className="text-2xl" style={{ color: GOLD }} />
                   <h3 className="font-bold text-lg">Atenção Personalizada</h3>
@@ -88,7 +95,10 @@ export default function ReservarSection() {
               </div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-default shadow-xl border border-white/30">
+            <div
+              className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-default shadow-xl border border-white/30"
+              data-reveal="up"
+            >
               <h3
                 className="text-xl md:text-2xl font-bold mb-4"
                 style={{ color: GOLD }}
@@ -140,20 +150,24 @@ export default function ReservarSection() {
 
           {/* Lado derecho - Imagen y CTA */}
           <div className="space-y-8">
-            <div className="relative">
+            <div className="relative" data-reveal="zoom">
               <div className="relative h-80 md:h-96 overflow-hidden rounded-default shadow-2xl">
                 <Image
                   src="/images/pousada/pousada_sunset.jpg"
                   alt="Pousada Santa Maria - Deck sobre o mar ao pôr do sol"
                   fill
                   className="object-cover"
+                  data-fade
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               </div>
             </div>
 
             <div className="text-center space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg">
+              <div
+                className="bg-white/80 backdrop-blur-sm p-6 rounded-default shadow-lg"
+                data-reveal="up"
+              >
                 <h3 className="text-xl font-bold mb-2" style={{ color: GOLD }}>
                   Reserve Agora
                 </h3>

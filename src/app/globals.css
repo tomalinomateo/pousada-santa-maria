@@ -19,6 +19,16 @@
   --text: #412f26;
   --button: #806044;
   --button-text: #ede1d2;
+
+  /* ---- Sistema de movimiento --------------------------------------
+     Una sola curva y cuatro duraciones para toda la página. La curva
+     arranca rápido y frena suave: es la que da sensación de calma. */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms; /* feedback de pulsación */
+  --dur-base: 260ms; /* hover de botones e íconos */
+  --dur-slow: 420ms; /* hover de tarjetas, navbar */
+  --dur-reveal: 800ms; /* aparición al scrollear */
+  --dur-enter: 900ms; /* entrada de la primera pantalla */
 }
 
 @theme inline {
@@ -35,9 +45,18 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Los anclas internas no quedan tapadas por la navbar fija */
+[id] {
+  scroll-margin-top: 88px;
 }
 
 /* Aumentar tamaño de fuente para Stigma */
@@ -60,23 +79,406 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Smooth page transition on navigation */
+/* ============================================================
+   Foco visible
+   Sólo para teclado: el mouse no dibuja el anillo.
+   ============================================================ */
+:where(a, button, [role="button"], input, select, textarea, iframe):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Transición entre páginas
+   ============================================================ */
 .page-transition {
-  animation: pageFadeIn 0.6s ease-out forwards;
+  animation: pageFadeIn var(--dur-reveal) var(--ease-soft) forwards;
 }
 
 @keyframes pageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translate3d(0, 10px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
-/* Ocultar el botón de play gigante que iOS muestra sobre el video del hero */
+/* ============================================================
+   Aparición al scrollear (reveal)
+
+   El estado oculto vive detrás de html[data-motion="on"], que un script
+   inline en <body> setea antes de pintar. Si no hay JavaScript, o si el
+   sistema pide menos movimiento, el atributo nunca vale "on" y todo el
+   contenido queda visible: nada depende del observer para verse.
+   ============================================================ */
+/* REGLA DE ORO DE ESTE ARCHIVO
+   Las entradas (aparecer al scrollear, fundir una foto) usan `animation`.
+   Las interacciones (hover, active) usan `transition`.
+
+   Nunca al revés, y nunca las dos sobre el mismo elemento con `transition`:
+   `transition` es una sola propiedad, así que la regla más específica pisa a
+   la otra por completo. Cuando el reveal y el hover competían por ella, el
+   hover se quedaba sin transición y las tarjetas saltaban de golpe. Separadas
+   en `animation` y `transition`, conviven sin tocarse. */
+html[data-motion="on"] [data-reveal] {
+  opacity: 0;
+}
+
+html[data-motion="on"] [data-reveal].is-revealed {
+  animation: revealUp var(--dur-reveal) var(--ease-soft) var(--reveal-delay, 0ms)
+    both;
+}
+
+html[data-motion="on"] [data-reveal="left"].is-revealed {
+  animation-name: revealLeft;
+}
+
+html[data-motion="on"] [data-reveal="right"].is-revealed {
+  animation-name: revealRight;
+}
+
+/* Para fotos: entran con un zoom mínimo que se asienta */
+html[data-motion="on"] [data-reveal="zoom"].is-revealed {
+  animation-name: revealZoom;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    translate: -28px 0;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes revealRight {
+  from {
+    opacity: 0;
+    translate: 28px 0;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes revealZoom {
+  from {
+    opacity: 0;
+    scale: 1.04;
+  }
+  to {
+    opacity: 1;
+    scale: none;
+  }
+}
+
+/* Grupo: no se esconde a sí mismo, sólo dispara a sus hijos.
+   Sirve para listas donde el contenedor no debe moverse, como el carrusel
+   horizontal de quartos: ahí los hijos salen del viewport en horizontal y
+   nunca dispararían solos. */
+html[data-motion="on"] [data-reveal="group"] {
+  opacity: 1;
+  animation: none;
+}
+
+html[data-motion="on"] [data-reveal="group"] .reveal-child {
+  opacity: 0;
+}
+
+html[data-motion="on"] [data-reveal="group"].is-revealed .reveal-child {
+  animation: revealUp var(--dur-reveal) var(--ease-soft) var(--reveal-delay, 0ms)
+    both;
+}
+
+/* Escalonado: los hijos de un grupo entran uno detrás del otro */
+.reveal-d1 { --reveal-delay: 90ms; }
+.reveal-d2 { --reveal-delay: 180ms; }
+.reveal-d3 { --reveal-delay: 270ms; }
+.reveal-d4 { --reveal-delay: 360ms; }
+.reveal-d5 { --reveal-delay: 450ms; }
+
+/* ============================================================
+   Entrada de la primera pantalla (sin observer: ya está a la vista)
+   ============================================================ */
+html[data-motion="on"] .enter {
+  opacity: 0;
+  animation: enterRise var(--dur-enter) var(--ease-soft) var(--enter-delay, 0ms)
+    forwards;
+}
+
+@keyframes enterRise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+.enter-d1 { --enter-delay: 120ms; }
+.enter-d2 { --enter-delay: 280ms; }
+.enter-d3 { --enter-delay: 440ms; }
+.enter-d4 { --enter-delay: 600ms; }
+.enter-d5 { --enter-delay: 780ms; }
+
+/* ============================================================
+   Fotos: aparecen con un fundido en vez de aparecer de golpe
+
+   El script marca .is-loaded cuando la imagen terminó de decodificar,
+   contemplando también las que ya venían del cache.
+   ============================================================ */
+html[data-motion="on"] img[data-fade] {
+  opacity: 0;
+}
+
+html[data-motion="on"] img[data-fade].is-loaded {
+  animation: fadeIn 700ms var(--ease-soft) both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Botones
+
+   El hover sólo existe donde hay un puntero real: en touch, :hover queda
+   pegado después del tap y la tarjeta se ve "trabada".
+   ============================================================ */
+.btn-motion {
+  transition:
+    transform var(--dur-base) var(--ease-soft),
+    box-shadow var(--dur-base) var(--ease-soft),
+    filter var(--dur-base) var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-motion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.45);
+    filter: brightness(1.06);
+  }
+}
+
+.btn-motion:active {
+  transform: translateY(0) scale(0.985);
+  transition-duration: var(--dur-fast);
+}
+
+/* La flecha acompaña el hover del botón que la contiene */
+.btn-arrow {
+  transition: transform var(--dur-base) var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-motion:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* ============================================================
+   Tarjetas
+   ============================================================ */
+.card-motion {
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    box-shadow var(--dur-slow) var(--ease-soft);
+}
+
+/* La foto acompaña a la tarjeta, no compite con ella: apenas más lenta que el
+   levantamiento y con un recorrido corto. En fotos grandes un zoom fuerte se
+   lee como un salto de encuadre, no como un gesto. */
+.card-zoom {
+  transition: transform 650ms var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-motion:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 44px -20px rgba(64, 48, 38, 0.55);
+  }
+
+  .card-motion:hover .card-zoom {
+    transform: scale(1.035);
+  }
+
+  /* Las tarjetas de experiencias son a sangre y con el título encima: ahí el
+     zoom es el efecto principal y aguanta más recorrido. */
+  .exp-card:hover .card-zoom {
+    transform: scale(1.055);
+  }
+}
+
+.card-motion:active {
+  transform: translateY(-2px);
+  transition-duration: var(--dur-fast);
+}
+
+/* Flechas del carrusel: se funden en lugar de montarse y desmontarse */
+.carousel-arrow {
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-base) var(--ease-soft),
+    background-color var(--dur-base) var(--ease-soft);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-arrow[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Tailwind centra la flecha con la propiedad `translate`; usamos `scale`
+     para no pisar ese centrado. */
+  .carousel-arrow[data-visible="true"]:hover {
+    scale: 1.08;
+  }
+}
+
+/* Tarjetas de experiencias: la foto se acerca, el velo se profundiza y el
+   título sube apenas. Tres micro-movimientos que leen como uno solo. */
+.exp-veil {
+  opacity: 0.85;
+  transition: opacity var(--dur-slow) var(--ease-soft);
+}
+
+.exp-title {
+  transition: translate var(--dur-slow) var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .exp-card:hover .exp-veil {
+    opacity: 1;
+  }
+
+  .exp-card:hover .exp-title {
+    translate: 0 -6px;
+  }
+}
+
+/* ============================================================
+   Navegación
+   ============================================================ */
+.nav-link {
+  position: relative;
+  transition: opacity var(--dur-base) var(--ease-soft);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-soft);
+}
+
+.nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Enlaces del pie: el subrayado crece desde la izquierda */
+.footer-link {
+  position: relative;
+  transition: opacity var(--dur-base) var(--ease-soft);
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ============================================================
+   Hero: señal de scroll
+   ============================================================ */
+.scroll-cue {
+  animation: scrollCue 2.4s var(--ease-soft) infinite;
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
+/* Círculos decorativos de la sección Reservar: deriva muy lenta */
+.drift {
+  animation: drift 14s ease-in-out infinite;
+}
+
+.drift-slow {
+  animation: drift 20s ease-in-out infinite reverse;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.08);
+  }
+}
+
+/* ============================================================
+   Ocultar el botón de play gigante que iOS muestra sobre el video del hero
+   ============================================================ */
 .hero-video::-webkit-media-controls,
 .hero-video::-webkit-media-controls-start-playback-button,
 .hero-video::-webkit-media-controls-panel,
@@ -85,4 +487,22 @@ body {
   -webkit-appearance: none;
   appearance: none;
   opacity: 0;
+}
+
+/* ============================================================
+   Respeto por quien pide menos movimiento (iOS/macOS/Windows/Android)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

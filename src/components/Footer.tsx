@@ -30,7 +30,7 @@ export default function Footer() {
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline flex items-center gap-1.5 transition-all duration-500 ease-out"
+            className="footer-link flex items-center gap-1.5"
             style={{ color: accent }}
           >
             <FaWhatsapp className="shrink-0" />
@@ -42,7 +42,7 @@ export default function Footer() {
           href={getWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono hover:underline transition-all duration-500 ease-out"
+          className="footer-link font-mono"
           style={{ color: accent }}
         >
           {formatWhatsAppDisplay(WHATSAPP_NUMBER)}
@@ -59,7 +59,7 @@ export default function Footer() {
             style={{ color: accent }}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-base"
+            className="btn-motion text-base"
           >
             <FaInstagram />
           </a>

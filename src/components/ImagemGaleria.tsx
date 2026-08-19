@@ -53,6 +53,11 @@ export default function ImagemGaleria({
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
           decoding={priority ? "sync" : "async"}
+          data-fade
+          // SiteMotion le agrega .is-loaded cuando la foto termina de cargar.
+          // Dentro de un <Suspense> eso puede pasar antes de que React hidrate
+          // el subárbol, y sin esto React lo reporta como desajuste.
+          suppressHydrationWarning
           className={`absolute inset-0 h-full w-full object-cover ${className}`}
         />
       </picture>

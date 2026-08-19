@@ -7,6 +7,9 @@ import type { Quarto } from "@/data/quartos";
 import ImagemGaleria from "@/components/ImagemGaleria";
 import RoomModal from "@/components/RoomModal";
 
+// Las tarjetas de la grilla entran escalonadas, de a pares por fila.
+const REVEAL_STAGGER = ["", "reveal-d1", "reveal-d2", "reveal-d3"];
+
 type QuartosGridProps = {
   quartos: Quarto[];
 };
@@ -25,13 +28,21 @@ export default function QuartosGrid({ quartos }: QuartosGridProps) {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {quartos.map((quarto) => (
+      <div
+        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+        data-reveal="group"
+        // Esta grilla vive dentro de un <Suspense>: SiteMotion puede marcarla
+        // como revelada antes de que React la hidrate.
+        suppressHydrationWarning
+      >
+        {quartos.map((quarto, i) => (
           <button
             type="button"
             key={quarto.id}
             onClick={() => setSelectedQuarto(quarto)}
-            className="group text-left rounded-none overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 ease-out hover:scale-[1.01]"
+            className={`card-motion reveal-child group text-left rounded-none overflow-hidden shadow-lg ${
+              REVEAL_STAGGER[i % REVEAL_STAGGER.length]
+            }`}
             style={{ background: "var(--navbar-bg, rgba(255,255,255,0.97))" }}
           >
             <div className="relative aspect-[3/2] overflow-hidden">
@@ -40,6 +51,7 @@ export default function QuartosGrid({ quartos }: QuartosGridProps) {
                 <ImagemGaleria
                   imagem={quarto.capa}
                   sizes="(max-width: 768px) 100vw, (max-width: 1152px) 50vw, 560px"
+                  className="card-zoom"
                 />
               )}
             </div>
@@ -65,7 +77,7 @@ export default function QuartosGrid({ quartos }: QuartosGridProps) {
                 {quarto.nome}
               </h2>
               <span
-                className="inline-flex items-center gap-2 font-semibold uppercase tracking-wide text-sm group-hover:gap-3 transition-all duration-500 ease-out"
+                className="inline-flex items-center gap-2 font-semibold uppercase tracking-wide text-sm group-hover:gap-3 transition-all duration-300 ease-out"
                 style={{ color: "var(--accent)" }}
               >
                 Ver fotos

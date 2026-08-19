@@ -18,7 +18,7 @@ export default function PousadaSection() {
         boxShadow: "0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-6" data-reveal="zoom">
         <Image
           src="/images/logo-om.png"
           alt="Logo Santa Maria"
@@ -31,19 +31,21 @@ export default function PousadaSection() {
         <h2
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest uppercase mb-4"
           style={{ color: "var(--text)" }}
+          data-reveal="up"
         >
           Pousada <br className="md:hidden" />
           Santa Maria
         </h2>
         <p
-          className="text-lg md:text-xl max-w-xl mx-auto normal-case tracking-wide"
+          className="text-lg md:text-xl max-w-xl mx-auto normal-case tracking-wide reveal-d1"
           style={{ color: "var(--text)" }}
+          data-reveal="up"
         >
           Atins – Lençóis Maranhenses
         </p>
       </div>
       <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-        <div className="order-2 md:order-1">
+        <div className="order-2 md:order-1" data-reveal="left">
           <p
             className="text-lg md:text-xl leading-relaxed mb-6 md:mb-8"
             style={{ color: GRAY, opacity: 0.92 }}
@@ -59,20 +61,24 @@ export default function PousadaSection() {
                 background: GOLD,
                 color: "var(--button-text, #222)",
               }}
-              className="w-full md:w-auto px-8 py-3 rounded-none font-semibold shadow-lg hover:scale-[1.02] hover:shadow-xl transition-all duration-500 ease-out uppercase flex items-center justify-center gap-2 text-lg"
+              className="btn-motion w-full md:w-auto px-8 py-3 rounded-none font-semibold shadow-lg uppercase flex items-center justify-center gap-2 text-lg"
             >
               <span className="md:hidden">Nossa pousada</span>
               <span className="hidden md:inline">Ver mais sobre a pousada</span>
-              <FaArrowRight className="ml-1 text-base" />
+              <FaArrowRight className="btn-arrow ml-1 text-base" />
             </button>
           </Link>
         </div>
-        <div className="relative h-[250px] md:h-[400px] overflow-hidden shadow-lg border border-[rgba(0,0,0,0.04)] order-1 md:order-2">
+        <div
+          className="relative h-[250px] md:h-[400px] overflow-hidden shadow-lg border border-[rgba(0,0,0,0.04)] order-1 md:order-2"
+          data-reveal="right"
+        >
           <Image
             src="/images/pousada/pousada_11.jpg"
             alt="Área de convivência da Pousada Santa Maria à noite"
             fill
             className="object-cover"
+            data-fade
           />
         </div>
       </div>
