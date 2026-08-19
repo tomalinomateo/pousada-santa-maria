@@ -21,7 +21,7 @@ const josefin = Josefin_Sans({
 const MOTION_INIT = `document.documentElement.dataset.motion=window.matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on";`;
 
 export const metadata: Metadata = {
-  title: "Pousada Santa Maria",
+  title: "Santa Maria - Atins",
   description: "Pousada Santa Maria em Atins, Lençóis Maranhenses",
   icons: {
     icon: "/images/logo-om-icon.png",
