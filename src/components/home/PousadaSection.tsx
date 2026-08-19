@@ -32,7 +32,8 @@ export default function PousadaSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest uppercase mb-4"
           style={{ color: "var(--text)" }}
         >
-          Pousada Santa Maria
+          Pousada <br className="md:hidden" />
+          Santa Maria
         </h2>
         <p
           className="text-lg md:text-xl max-w-xl mx-auto normal-case tracking-wide"
