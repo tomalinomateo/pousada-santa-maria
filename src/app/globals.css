@@ -75,3 +75,14 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Ocultar el botón de play gigante que iOS muestra sobre el video del hero */
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-start-playback-button,
+.hero-video::-webkit-media-controls-panel,
+.hero-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
