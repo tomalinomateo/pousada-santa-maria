@@ -61,6 +61,11 @@ export const quartosList: QuartoEntry[] = [
     ordem: { inicio: ["sm-5"] },
   },
   { nome: "Cajueiro", grupo: "cuarto-6", capacidade: 3 },
-  { nome: "Carnauba", grupo: "cuarto-7", capacidade: 4 },
+  {
+    nome: "Carnauba",
+    grupo: "cuarto-7",
+    capacidade: 4,
+    ordem: { inicio: ["680872061"] },
+  },
   { nome: "Buriti", grupo: "cuarto-8", capacidade: 2 },
 ];
