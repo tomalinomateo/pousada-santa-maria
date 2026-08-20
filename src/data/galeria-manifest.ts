@@ -20,30 +20,32 @@ export function getGaleria(grupo: string): ImagemGaleria[] {
 }
 
 /**
- * Foto de portada de un grupo. Si se pasa `id` y existe en el grupo, se usa esa;
- * si no, la primera del grupo.
+ * Fotos de un grupo, con las de `ordemIds` adelante y en ese orden. Los ids que
+ * no existan en el grupo se ignoran; el resto de las fotos sigue el orden del
+ * manifest.
  */
-export function getCapa(grupo: string, id?: string): ImagemGaleria | undefined {
+export function getGaleriaOrdenada(
+  grupo: string,
+  ordemIds?: string[]
+): ImagemGaleria[] {
   const imagens = getGaleria(grupo);
-  if (imagens.length === 0) return undefined;
-  if (id) {
-    const escolhida = imagens.find((imagem) => imagem.id === id);
-    if (escolhida) return escolhida;
-  }
-  return imagens[0];
+  if (!ordemIds || ordemIds.length === 0) return imagens;
+
+  const fixadas = ordemIds
+    .map((id) => imagens.find((imagem) => imagem.id === id))
+    .filter((imagem): imagem is ImagemGaleria => imagem !== undefined);
+  const fixadasIds = new Set(fixadas.map((imagem) => imagem.id));
+
+  return [...fixadas, ...imagens.filter((imagem) => !fixadasIds.has(imagem.id))];
 }
 
 /**
- * Fotos de un grupo con la portada primero. El resto conserva el orden del
- * manifest; así la galería del cuarto abre con la misma foto que se ve en las
- * grillas y los carruseles.
+ * Foto de portada de un grupo: la primera de la galería ya ordenada, así la
+ * portada es siempre la misma que abre la galería del cuarto.
  */
-export function getGaleriaComCapaPrimeiro(
+export function getCapa(
   grupo: string,
-  id?: string
-): ImagemGaleria[] {
-  const imagens = getGaleria(grupo);
-  const capa = getCapa(grupo, id);
-  if (!capa) return imagens;
-  return [capa, ...imagens.filter((imagem) => imagem.id !== capa.id)];
+  ordemIds?: string[]
+): ImagemGaleria | undefined {
+  return getGaleriaOrdenada(grupo, ordemIds)[0];
 }
