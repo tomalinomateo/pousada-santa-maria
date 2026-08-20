@@ -20,23 +20,42 @@ export function getGaleria(grupo: string): ImagemGaleria[] {
 }
 
 /**
- * Fotos de un grupo, con las de `ordemIds` adelante y en ese orden. Los ids que
- * no existan en el grupo se ignoran; el resto de las fotos sigue el orden del
- * manifest.
+ * Orden manual de la galería de un grupo: ids fijados al principio y al final.
+ * Lo que no se nombra queda en el medio, en el orden del manifest.
+ */
+export type OrdemGaleria = {
+  /** Ids que van primero, en este orden. El primero es además la portada. */
+  inicio?: string[];
+  /** Ids que van últimos, en este orden. */
+  fim?: string[];
+};
+
+/**
+ * Fotos de un grupo con el orden manual aplicado. Los ids que no existan en el
+ * grupo se ignoran, y un id repetido en `inicio` y `fim` sólo cuenta al inicio.
  */
 export function getGaleriaOrdenada(
   grupo: string,
-  ordemIds?: string[]
+  ordem?: OrdemGaleria,
 ): ImagemGaleria[] {
   const imagens = getGaleria(grupo);
-  if (!ordemIds || ordemIds.length === 0) return imagens;
+  if (!ordem) return imagens;
 
-  const fixadas = ordemIds
-    .map((id) => imagens.find((imagem) => imagem.id === id))
-    .filter((imagem): imagem is ImagemGaleria => imagem !== undefined);
-  const fixadasIds = new Set(fixadas.map((imagem) => imagem.id));
+  const fixar = (ids: string[] | undefined, jaFixados: Set<string>) =>
+    (ids ?? [])
+      .map((id) => imagens.find((imagem) => imagem.id === id))
+      .filter(
+        (imagem): imagem is ImagemGaleria =>
+          imagem !== undefined && !jaFixados.has(imagem.id),
+      );
 
-  return [...fixadas, ...imagens.filter((imagem) => !fixadasIds.has(imagem.id))];
+  const inicio = fixar(ordem.inicio, new Set());
+  const fixados = new Set(inicio.map((imagem) => imagem.id));
+  const fim = fixar(ordem.fim, fixados);
+  for (const imagem of fim) fixados.add(imagem.id);
+
+  const meio = imagens.filter((imagem) => !fixados.has(imagem.id));
+  return [...inicio, ...meio, ...fim];
 }
 
 /**
@@ -45,7 +64,7 @@ export function getGaleriaOrdenada(
  */
 export function getCapa(
   grupo: string,
-  ordemIds?: string[]
+  ordem?: OrdemGaleria,
 ): ImagemGaleria | undefined {
-  return getGaleriaOrdenada(grupo, ordemIds)[0];
+  return getGaleriaOrdenada(grupo, ordem)[0];
 }

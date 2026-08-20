@@ -30,8 +30,8 @@ const todosOsQuartos: Quarto[] = quartosList.map((entry, index) => ({
   capacidade: entry.capacidade,
   grupo: entry.grupo,
   slug: nomeToSlug(entry.nome),
-  imagens: getGaleriaOrdenada(entry.grupo, entry.ordemIds),
-  capa: getCapa(entry.grupo, entry.ordemIds),
+  imagens: getGaleriaOrdenada(entry.grupo, entry.ordem),
+  capa: getCapa(entry.grupo, entry.ordem),
 }));
 
 /** Cuartos declarados en la lista que todavía no tienen fotos en el manifest. */
