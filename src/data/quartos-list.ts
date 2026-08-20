@@ -33,7 +33,12 @@ export const quartosList: QuartoEntry[] = [
     nome: "Maresia",
     grupo: "cuarto-2",
     capacidade: 2,
-    ordemIds: ["cuarto-2", "chatgpt-image-2-jul-2026-20-43-43"],
+    ordemIds: [
+      "cuarto-2",
+      "chatgpt-image-2-jul-2026-20-43-43",
+      "santamaria-165",
+      "439089691",
+    ],
   },
   { nome: "Plancton", grupo: "cuarto-3", capacidade: 4 },
   { nome: "Mar", grupo: "cuarto-4", capacidade: 3, ordemIds: ["sm-33"] },
