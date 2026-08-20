@@ -267,69 +267,6 @@
       ]
     },
     {
-      "id": "img-8841",
-      "alt": "",
-      "ancho": 2075,
-      "alto": 3929,
-      "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQBACdASoUACYAPzmEu1QvKCYjKrgN+eAnCWUAwoAJURmIC8EHW7Da8beA9J0AAAD+y3SIpKYNslv9x4AEST0kgr7K3cTZGX0Gou8dFdls7nlX/S5Y/WN6mWeBUKSL0IA2Rdg9hkahG67ij9UYmXZ94uDo5XRQx47hohp0D6K4OisieJ2sqtABrwikAAAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-1/img-8841-400.avif",
-          "webp": "/img/cuarto-1/img-8841-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-1/img-8841-800.avif",
-          "webp": "/img/cuarto-1/img-8841-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-1/img-8841-1200.avif",
-          "webp": "/img/cuarto-1/img-8841-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-1/img-8841-1600.avif",
-          "webp": "/img/cuarto-1/img-8841-1600.webp"
-        }
-      ]
-    },
-    {
-      "id": "img-8842",
-      "alt": "",
-      "ancho": 4000,
-      "alto": 3000,
-      "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACwAwCdASoUAA8APzmEuVOvKKWisAgB4CcJQAAIr+sySqgrrHCpAAD+ueCoqiodWXpogtleaVuOdIIRVJ25cnGuFBuTYWIfHzo8xJ5FEqT861CX368d3MMAFjBdV9QtTjAAAA==",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-1/img-8842-400.avif",
-          "webp": "/img/cuarto-1/img-8842-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-1/img-8842-800.avif",
-          "webp": "/img/cuarto-1/img-8842-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-1/img-8842-1200.avif",
-          "webp": "/img/cuarto-1/img-8842-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-1/img-8842-1600.avif",
-          "webp": "/img/cuarto-1/img-8842-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-1/img-8842-2400.avif",
-          "webp": "/img/cuarto-1/img-8842-2400.webp"
-        }
-      ]
-    },
-    {
       "id": "img-8843",
       "alt": "",
       "ancho": 4000,

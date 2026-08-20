@@ -1,5 +1,5 @@
 import { quartosList } from "./quartos-list";
-import { getCapa, getGaleria } from "./galeria-manifest";
+import { getCapa, getGaleriaComCapaPrimeiro } from "./galeria-manifest";
 import type { ImagemGaleria } from "./galeria";
 
 function nomeToSlug(nome: string): string {
@@ -18,7 +18,7 @@ export type Quarto = {
   capacidade?: number;
   grupo: string;
   slug: string;
-  /** Fotos del cuarto, en el orden del manifest */
+  /** Fotos del cuarto: la portada primero, el resto en el orden del manifest */
   imagens: ImagemGaleria[];
   /** Portada para grillas y carruseles */
   capa?: ImagemGaleria;
@@ -30,7 +30,7 @@ const todosOsQuartos: Quarto[] = quartosList.map((entry, index) => ({
   capacidade: entry.capacidade,
   grupo: entry.grupo,
   slug: nomeToSlug(entry.nome),
-  imagens: getGaleria(entry.grupo),
+  imagens: getGaleriaComCapaPrimeiro(entry.grupo, entry.capaId),
   capa: getCapa(entry.grupo, entry.capaId),
 }));
 

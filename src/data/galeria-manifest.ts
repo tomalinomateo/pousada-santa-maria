@@ -32,3 +32,18 @@ export function getCapa(grupo: string, id?: string): ImagemGaleria | undefined {
   }
   return imagens[0];
 }
+
+/**
+ * Fotos de un grupo con la portada primero. El resto conserva el orden del
+ * manifest; así la galería del cuarto abre con la misma foto que se ve en las
+ * grillas y los carruseles.
+ */
+export function getGaleriaComCapaPrimeiro(
+  grupo: string,
+  id?: string
+): ImagemGaleria[] {
+  const imagens = getGaleria(grupo);
+  const capa = getCapa(grupo, id);
+  if (!capa) return imagens;
+  return [capa, ...imagens.filter((imagem) => imagem.id !== capa.id)];
+}
