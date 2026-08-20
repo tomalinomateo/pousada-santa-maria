@@ -1,5 +1,6 @@
 import type { ImagemGaleria as Imagem } from "@/data/galeria";
 import { fallbackSrc, toSrcSet } from "@/data/galeria";
+import { getFoco } from "@/data/focos";
 
 type ImagemGaleriaProps = {
   imagem: Imagem;
@@ -30,6 +31,8 @@ export default function ImagemGaleria({
   priority = false,
   className = "",
 }: ImagemGaleriaProps) {
+  const foco = getFoco(imagem.id);
+
   return (
     <>
       {/* Placeholder desenfocado, visible sólo hasta que la foto pinta encima */}
@@ -38,13 +41,22 @@ export default function ImagemGaleria({
         className="absolute inset-0 bg-center bg-cover"
         style={{
           backgroundImage: `url("${imagem.placeholder}")`,
+          backgroundPosition: foco,
           filter: "blur(16px)",
           transform: "scale(1.1)",
         }}
       />
       <picture>
-        <source type="image/avif" srcSet={toSrcSet(imagem, "avif")} sizes={sizes} />
-        <source type="image/webp" srcSet={toSrcSet(imagem, "webp")} sizes={sizes} />
+        <source
+          type="image/avif"
+          srcSet={toSrcSet(imagem, "avif")}
+          sizes={sizes}
+        />
+        <source
+          type="image/webp"
+          srcSet={toSrcSet(imagem, "webp")}
+          sizes={sizes}
+        />
         <img
           src={fallbackSrc(imagem)}
           alt={imagem.alt}
@@ -58,6 +70,7 @@ export default function ImagemGaleria({
           // Dentro de un <Suspense> eso puede pasar antes de que React hidrate
           // el subárbol, y sin esto React lo reporta como desajuste.
           suppressHydrationWarning
+          style={foco ? { objectPosition: foco } : undefined}
           className={`absolute inset-0 h-full w-full object-cover ${className}`}
         />
       </picture>

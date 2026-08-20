@@ -1402,25 +1402,6 @@
   ],
   "cuarto-8": [
     {
-      "id": "680873589",
-      "alt": "",
-      "ancho": 1024,
-      "alto": 621,
-      "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAoAA4BaJaACdAECmV32b1LgAP7kZ2myzrU1jTuQHeUefFGYJIkyh4gGFFUnc0r92bdMKG3WKT7872MSGzv1fub+CIm+RzT1iL20RtoiGs4AAAA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-8/680873589-400.avif",
-          "webp": "/img/cuarto-8/680873589-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-8/680873589-800.avif",
-          "webp": "/img/cuarto-8/680873589-800.webp"
-        }
-      ]
-    },
-    {
       "id": "693385779",
       "alt": "",
       "ancho": 1024,
@@ -1497,25 +1478,6 @@
       ]
     },
     {
-      "id": "693385829",
-      "alt": "",
-      "ancho": 1024,
-      "alto": 665,
-      "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAoAA4BaJZQCdACC2MIAAPa94x5nYK+LxJbpD4eeaUHC1tCughzNipiodFMxz3YC8Be/Y48SzlTVSNgjvvoy9CT8wtCoAAA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-8/693385829-400.avif",
-          "webp": "/img/cuarto-8/693385829-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-8/693385829-800.avif",
-          "webp": "/img/cuarto-8/693385829-800.webp"
-        }
-      ]
-    },
-    {
       "id": "693385833",
       "alt": "",
       "ancho": 1024,
@@ -1531,20 +1493,6 @@
           "ancho": 800,
           "avif": "/img/cuarto-8/693385833-800.avif",
           "webp": "/img/cuarto-8/693385833-800.webp"
-        }
-      ]
-    },
-    {
-      "id": "693385840",
-      "alt": "",
-      "ancho": 465,
-      "alto": 768,
-      "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoQABoAPu1oqk6ppiQiMAgBMB2JaACdOUACef/u/8y7xtWaxAAA/rfK5Vclp9ccIgEqLz12HY2Zr+XI7o+Hzcx6B5T1ougv/R8BnhFUtBSGMC9trFK6fzyDagQekBPt7v4a3ySXnWnBu+nfDfQg5mo6QhvJZJyEy/8vuOyb7dTWNcysAAA=",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-8/693385840-400.avif",
-          "webp": "/img/cuarto-8/693385840-400.webp"
         }
       ]
     },
