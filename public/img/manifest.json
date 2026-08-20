@@ -199,40 +199,6 @@
       ]
     },
     {
-      "id": "img-8838",
-      "alt": "",
-      "ancho": 4000,
-      "alto": 3000,
-      "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoUAA8APzmGulOvKSWisAgB4CcJZAC7Ef/gIj8f3eWBve3R70oAAPyLvuVhJ4beXmJ+OFI2Hc+GHhLbEUEwGKKlgG4KQ9aShJM8C9LgKdcwQE1VSupSwnXUJQ2GcFYx59nJXaHz10pUeO2/Lo44twAA",
-      "versiones": [
-        {
-          "ancho": 400,
-          "avif": "/img/cuarto-1/img-8838-400.avif",
-          "webp": "/img/cuarto-1/img-8838-400.webp"
-        },
-        {
-          "ancho": 800,
-          "avif": "/img/cuarto-1/img-8838-800.avif",
-          "webp": "/img/cuarto-1/img-8838-800.webp"
-        },
-        {
-          "ancho": 1200,
-          "avif": "/img/cuarto-1/img-8838-1200.avif",
-          "webp": "/img/cuarto-1/img-8838-1200.webp"
-        },
-        {
-          "ancho": 1600,
-          "avif": "/img/cuarto-1/img-8838-1600.avif",
-          "webp": "/img/cuarto-1/img-8838-1600.webp"
-        },
-        {
-          "ancho": 2400,
-          "avif": "/img/cuarto-1/img-8838-2400.avif",
-          "webp": "/img/cuarto-1/img-8838-2400.webp"
-        }
-      ]
-    },
-    {
       "id": "img-8840",
       "alt": "",
       "ancho": 3000,
