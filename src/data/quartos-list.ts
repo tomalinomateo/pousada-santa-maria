@@ -19,7 +19,7 @@ export type QuartoEntry = {
 };
 
 export const quartosList: QuartoEntry[] = [
-  { nome: "Maresia Deluxe", grupo: "cuarto-1", capacidade: 2 },
+  { nome: "Maresia Deluxe", grupo: "cuarto-1", capacidade: 2, capaId: "img-8764" },
   { nome: "Maresia", grupo: "cuarto-2", capacidade: 2 },
   { nome: "Plancton", grupo: "cuarto-3", capacidade: 4 },
   { nome: "Mar", grupo: "cuarto-4", capacidade: 3, capaId: "sm-33" },
